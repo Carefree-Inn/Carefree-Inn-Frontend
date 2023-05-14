@@ -3692,7 +3692,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
   !*** ./node_modules/react/cjs/react-jsx-runtime.production.min.js ***!
   \********************************************************************/
 /*! no static exports found */
-/*! exports used: Fragment, jsx */
+/*! exports used: Fragment, jsx, jsxs */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

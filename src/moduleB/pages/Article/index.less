@@ -1,0 +1,118 @@
+.Article {
+  background-color: #101010;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 10px;
+
+  .ArticleBox {
+    width: 90%;
+    margin: 20px auto auto;
+
+    .card {
+      min-height: 350px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px 30px 20px 30px;
+      margin-bottom: 20px;
+
+      .cardInfo {
+        display: flex;
+        justify-content: space-around;
+
+        .cardUser {
+          display: flex;
+          align-items: center;
+
+
+          .cardUserImg {
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+          }
+
+          .cardUserName {
+            margin-left: 20px;
+            width: 200px;
+          }
+
+        }
+
+        .cardMore {
+          display: flex;
+          flex-direction: column;
+          width: 250px;
+          align-items: flex-end;
+
+          .cardMoreInfo {
+            width: 50px;
+            height: 50px;
+            display: flex;
+          }
+
+          .cardTime {
+            font-size: 26px;
+            display: flex;
+          }
+
+        }
+      }
+
+      .cardContent {
+        width: auto;
+        min-height: 180px;
+        margin-top: 20px;
+        border-radius: 15px;
+        background-color: #efefef;
+        padding: 20px;
+
+        .cardContentText {
+          display: block;
+          word-break: normal;
+          word-wrap: break-word;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .cardContentImage {
+          width: 180px;
+          height: 180px;
+          background-color: #101010;
+          margin-right: 10px;
+        }
+
+      }
+    }
+
+    .articleComments {
+      min-height: 350px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px 30px 20px 30px;
+
+    }
+  }
+
+  .articlePostComment {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #cecece;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .articlePostCommentInput {
+      background-color: #9a9a9a;
+      width: 500px;
+      height: 60px;
+      border-radius: 10px;
+      padding: 0 10px 0 10px;
+    }
+
+    .articleLike {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
