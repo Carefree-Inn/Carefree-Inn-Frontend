@@ -1,14 +1,15 @@
+import Taro from "@tarojs/taro";
 import {Image, Text, View} from "@tarojs/components";
 import topic from "../../Images/topic.png";
 import more from "../../Images/more.svg";
 import like from "../../Images/like.svg"
+import likefill from "../../Images/like-fill.svg"
 import message from "../../Images/message.svg"
 import heart from "../../Images/heart.svg"
 import "./index.less"
-import Taro from "@tarojs/taro";
 
-const GroundArticle = () => {
 
+const GroundArticle = (nickname, avatar, title, content, likes, create_time, liked) => {
 
 
   const goArticle = () => {
@@ -37,16 +38,16 @@ const GroundArticle = () => {
     <View className='card'>
       <View className='cardInfo'>
         <View className='cardUser'>
-          <Image className='cardUserImg' src={topic} />
-          <Text className='cardUserName'>用户名</Text>
+          <Image className='cardUserImg' src={avatar} />
+          <Text className='cardUserName'>nickname</Text>
         </View>
         <View className='cardMore'>
           <View><Image className='cardMoreInfo' src={more} /></View>
-          <View><Text className='cardTime'>2023-3-13 14:30</Text></View>
+          <View><Text className='cardTime'>create_time</Text></View>
         </View>
       </View>
       <View className='cardContent' onClick={goArticle}>
-        <Text className='cardContentText'>123455555555555556666666666666666666666666666666666666666666666666666666</Text>
+        <Text className='cardContentText'>content</Text>
         <Image className='cardContentImage' src='' />
         <Image className='cardContentImage' src='' />
         <Image className='cardContentImage' src='' />
@@ -55,7 +56,7 @@ const GroundArticle = () => {
       <View className='cardLikeBox'>
         <View className='cardLikeBox2'>
           <Image className='cardLike' src={heart} />
-          <Image className='cardLike' src={like} />
+          <Image className='cardLike' src={liked ? likefill : like} />
           <Image className='cardLike' src={message} />
         </View>
       </View>

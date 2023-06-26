@@ -1,10 +1,33 @@
 import Taro from '@tarojs/taro'
 import {View, Input, Text, Image} from '@tarojs/components'
+import {useEffect, useState} from 'react';
 import './index.less'
 import edit from '../../Images/edit.svg'
 import GroundArticle from "../../components/GroundArticle";
+import {getJson, postData} from "../../fetch";
 
 const Ground = () => {
+
+  const [area, setArea] = useState([])
+  const [CategoryId, setCategoryId] = useState(1)
+  const [article, setArticle] = useState([])
+
+  useEffect(() => {
+      getJson('/post/category/all').then(r => {
+          const sortedrdata = r.data.map((x) => x).sort((a, b) => a.CategoryId - b.CategoryId)
+          setArea(sortedrdata)
+        }
+      )
+    },
+    []
+  )
+
+  useEffect(() => {
+    getJson('/post/category', {category_id: CategoryId}).then(r => {
+      setArticle(r.data)
+    })
+  }, [CategoryId])
+
 
   const goPostArticle = () => {
     Taro.navigateTo({
@@ -26,18 +49,30 @@ const Ground = () => {
     })
   }
 
+  const changeArea = (Id) => {
+    setCategoryId(Id)
+  }
+
   return (
     <View className='ground'>
       <Input type='text' placeholder='搜索帖子' className='searchBox' />
       <View className='groundBox'>
         <View className='groundAreas'>
-          <View className='groundArea'><Text>聊天嗑瓜子</Text></View>
-          <View className='groundArea'><Text>二手物品</Text></View>
-          <View className='groundArea'><Text>选课</Text></View>
-          <View className='groundArea'><Text>学习组队</Text></View>
-          <View className='groundArea'><Text>吃喝玩乐</Text></View>
+          {area.map((ar) => {
+            return (
+              <View className='groundArea' key='CategoryId' onClick={() => {
+                changeArea(ar.CategoryId)
+              }}
+              ><Text>{ar.Title}</Text></View>
+            )
+          })}
         </View>
         <View className='cards'>
+          {/*{article.map((art) => {*/}
+          {/*  <GroundArticle nickname={art.nickname} avatar={art.avatar} title={art.title} content={art.content} likes={art.likes}*/}
+          {/*    create_time={art.create_time} liked={art.liked}*/}
+          {/*  ></GroundArticle>*/}
+          {/*})}*/}
           <GroundArticle></GroundArticle>
           <GroundArticle></GroundArticle>
         </View>

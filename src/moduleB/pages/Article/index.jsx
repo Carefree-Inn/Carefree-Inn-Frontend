@@ -30,7 +30,7 @@ const Article = () => {
             </View>
           </View>
           <View className='cardContent'>
-            <Text className='cardContentText'>123455555555555556666666666666666666666666666666666666666666666666666666</Text>
+            <Text className='cardContentText'></Text>
             <Image className='cardContentImage' src='' />
             <Image className='cardContentImage' src='' />
             <Image className='cardContentImage' src='' />
