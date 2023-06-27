@@ -1,0 +1,125 @@
+.card {
+  min-height: 350rpx;
+  background-color: #ffffff;
+  border-radius: 15rpx;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  margin-bottom: 20rpx;
+}
+.card .cardInfo {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.card .cardInfo .cardUser {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card .cardInfo .cardUser .cardUserImg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  color: gray;
+}
+.card .cardInfo .cardUser .cardUserName {
+  margin-left: 20rpx;
+  width: 200rpx;
+}
+.card .cardInfo .cardMore {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 250rpx;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.card .cardInfo .cardMore .cardMoreInfo {
+  width: 50rpx;
+  height: 50rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.card .cardInfo .cardMore .cardTime {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 26rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+}
+.card .cardContent {
+  width: auto;
+  min-height: 180rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  background-color: #fff9f9;
+  padding: 20rpx;
+}
+.card .cardContent .cardContentText {
+  display: block;
+  word-break: normal;
+  word-wrap: break-word;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.card .cardContent .cardContentImage {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #101010;
+  margin-right: 10rpx;
+}
+.card .cardLikeBox {
+  width: auto;
+  height: 80rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card .cardLikeBox .cardLikeBox2 {
+  width: 200rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card .cardLikeBox .cardLikeBox2 .box3 {
+  width: 50rpx;
+  height: 80rpx;
+}
+.card .cardLikeBox .cardLikeBox2 .box3 .cardLike {
+  width: 50rpx;
+  height: 50rpx;
+}
+.card .cardLikeBox .cardLikeBox2 .box3 .num {
+  width: 100%;
+  font-size: 20rpx;
+  color: gray;
+  text-align: center;
+}
+

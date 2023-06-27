@@ -1,0 +1,15 @@
+.like {
+  background-color: #FFEFEA;
+  width: 100vw;
+  min-height: 100vh;
+}
+.like .post {
+  margin: 0 60rpx;
+  margin-bottom: 30rpx;
+}
+.btm {
+  width: 100%;
+  text-align: center;
+  color: gray;
+}
+

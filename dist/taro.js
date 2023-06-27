@@ -989,7 +989,7 @@ if (false) { var oldVNodeHook, options; }
   !*** ./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js ***!
   \*****************************************************************************/
 /*! exports provided: Ad, AdCustom, Audio, Block, Button, Camera, Canvas, Checkbox, CheckboxGroup, CoverImage, CoverView, CustomWrapper, Editor, Form, FunctionalPageNavigator, Icon, Image, Input, KeyboardAccessory, Label, LivePlayer, LivePusher, Map, MatchMedia, MovableArea, MovableView, NavigationBar, Navigator, OfficialAccount, OpenData, PageContainer, PageMeta, Picker, PickerView, PickerViewColumn, Progress, Radio, RadioGroup, RichText, ScrollView, Slider, Slot, Swiper, SwiperItem, Switch, Text, Textarea, Video, View, VoipRoom, WebView */
-/*! exports used: Text */
+/*! exports used: Button, Image, Input, Radio, Text, View */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -997,7 +997,7 @@ if (false) { var oldVNodeHook, options; }
 /* unused harmony export AdCustom */
 /* unused harmony export Audio */
 /* unused harmony export Block */
-/* unused harmony export Button */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Button; });
 /* unused harmony export Camera */
 /* unused harmony export Canvas */
 /* unused harmony export Checkbox */
@@ -1009,8 +1009,8 @@ if (false) { var oldVNodeHook, options; }
 /* unused harmony export Form */
 /* unused harmony export FunctionalPageNavigator */
 /* unused harmony export Icon */
-/* unused harmony export Image */
-/* unused harmony export Input */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Image; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Input; });
 /* unused harmony export KeyboardAccessory */
 /* unused harmony export Label */
 /* unused harmony export LivePlayer */
@@ -1029,7 +1029,7 @@ if (false) { var oldVNodeHook, options; }
 /* unused harmony export PickerView */
 /* unused harmony export PickerViewColumn */
 /* unused harmony export Progress */
-/* unused harmony export Radio */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Radio; });
 /* unused harmony export RadioGroup */
 /* unused harmony export RichText */
 /* unused harmony export ScrollView */
@@ -1038,10 +1038,10 @@ if (false) { var oldVNodeHook, options; }
 /* unused harmony export Swiper */
 /* unused harmony export SwiperItem */
 /* unused harmony export Switch */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Text; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Text; });
 /* unused harmony export Textarea */
 /* unused harmony export Video */
-/* unused harmony export View */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return View; });
 /* unused harmony export VoipRoom */
 /* unused harmony export WebView */
 var View = 'view';
@@ -7607,7 +7607,7 @@ function equipCommonApis(taro, global) {
   !*** ./node_modules/@tarojs/taro/index.js ***!
   \********************************************/
 /*! no static exports found */
-/*! exports used: initPxTransform */
+/*! exports used: default, getCurrentInstance, initPxTransform, usePullDownRefresh, useReachBottom, useReady */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _require = __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/runtime/dist/runtime.esm.js"),

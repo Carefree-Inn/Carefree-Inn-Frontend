@@ -1,13 +1,13 @@
 export default ({
   pages: [
+    'pages/Mine/index',
     'pages/Login/index',
     'pages/Topic/index',
-    'pages/Mine/index',
     'pages/Ground/index'
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
+    navigationBarBackgroundColor: '#FFEFEA',
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black'
   },
@@ -15,7 +15,10 @@ export default ({
     {
       root: "moduleA",
       pages: [
-       'pages/Homepage/index'
+       'pages/Homepage/index',
+       "pages/EditInfo/index",
+       'pages/Likepost/index',
+       'pages/MyReply/index'
       ],
       independent: false
     }, ],
@@ -31,15 +34,15 @@ export default ({
         {
           pagePath: 'pages/Ground/index',
           text:'广场',
-          iconPath: '',
-          selectedIconPath: '',
+          iconPath: 'Images/ground.png',
+          selectedIconPath: 'Images/ground-selected.png',
   
         },
         {
           pagePath: 'pages/Mine/index',
           text:'个人',
-          iconPath: '',
-          selectedIconPath: ''
+          iconPath: 'Images/mine.png',
+          selectedIconPath: 'Images/mine-selected.png'
         }],
         color: '#000000',
         backgroundColor: '#F5E3E3',

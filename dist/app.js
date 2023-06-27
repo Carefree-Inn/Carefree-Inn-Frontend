@@ -1,4 +1,5 @@
 require("./runtime");
+require("./common");
 require("./vendors");
 require("./taro");
 
@@ -386,7 +387,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var config = {"pages":["pages/Topic/index","pages/Mine/index","pages/Ground/index"],"window":{"backgroundTextStyle":"light","navigationBarBackgroundColor":"#fff","navigationBarTitleText":"WeChat","navigationBarTextStyle":"black"},"subpackages":[{"root":"moduleA","pages":[],"independent":false}],"tabBar":{"list":[{"pagePath":"pages/Topic/index","text":"话题","iconPath":"Images/topic.png","selectedIconPath":"Images/topic-selected.png"},{"pagePath":"pages/Ground/index","text":"广场","iconPath":"","selectedIconPath":"images/notif-selected.png"},{"pagePath":"pages/Mine/index","text":"个人","iconPath":"images/mine.png","selectedIconPath":"images/mine-selected.png"}],"color":"#000000","backgroundColor":"#F5E3E3","selectedColor":"#D39999"}};
+var config = {"pages":["pages/Mine/index","pages/Login/index","pages/Topic/index","pages/Ground/index"],"window":{"backgroundTextStyle":"light","navigationBarBackgroundColor":"#FFEFEA","navigationBarTitleText":"WeChat","navigationBarTextStyle":"black"},"subpackages":[{"root":"moduleA","pages":["pages/Homepage/index","pages/EditInfo/index"],"independent":false}],"tabBar":{"list":[{"pagePath":"pages/Topic/index","text":"话题","iconPath":"Images/topic.png","selectedIconPath":"Images/topic-selected.png"},{"pagePath":"pages/Ground/index","text":"广场","iconPath":"","selectedIconPath":""},{"pagePath":"pages/Mine/index","text":"个人","iconPath":"Images/mine.png","selectedIconPath":"Images/mine-selected.png"}],"color":"#000000","backgroundColor":"#F5E3E3","selectedColor":"#D39999"}};
 _tarojs_runtime__WEBPACK_IMPORTED_MODULE_1__["window"].__taroAppConfig = config
 var inst = App(Object(_tarojs_plugin_framework_react_dist_runtime__WEBPACK_IMPORTED_MODULE_2__[/* createReactApp */ "a"])(_node_modules_babel_loader_lib_index_js_app_js__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], react__WEBPACK_IMPORTED_MODULE_5__, react_dom__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"], config))
 

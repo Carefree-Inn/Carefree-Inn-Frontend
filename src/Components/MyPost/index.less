@@ -1,0 +1,109 @@
+.card {
+    min-height: 350px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px 30px 20px 30px;
+    margin-bottom: 20px;
+  
+    .cardInfo {
+      display: flex;
+      justify-content: space-around;
+  
+      .cardUser {
+        display: flex;
+        align-items: center;
+  
+  
+        .cardUserImg {
+          width: 80px;
+          height: 80px;
+          border-radius: 40px;
+          color: gray;
+        }
+  
+        .cardUserName {
+          margin-left: 20px;
+          width: 200px;
+        }
+  
+      }
+  
+      .cardMore {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        align-items: flex-end;
+  
+        .cardMoreInfo {
+          width: 50px;
+          height: 50px;
+          display: flex;
+        }
+  
+        .cardTime {
+            width: max-content;
+          font-size: 26px;
+          display: flex;
+          flex-wrap: nowrap;
+        }
+  
+      }
+    }
+  
+    .cardContent {
+      width: auto;
+      min-height: 180px;
+      margin-top: 20px;
+      border-radius: 15px;
+      background-color: #fff9f9;
+      padding: 20px;
+  
+      .cardContentText {
+        display: block;
+        word-break: normal;
+        word-wrap: break-word;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+  
+      .cardContentImage {
+        width: 180px;
+        height: 180px;
+        background-color: #101010;
+        margin-right: 10px;
+      }
+    }
+  
+    .cardLikeBox {
+      width: auto;
+      height: 80px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+  
+      .cardLikeBox2 {
+        width: 200px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+  
+        .box3{
+            width: 50px;
+            height: 80px;
+
+            .cardLike {
+                width: 50px;
+                height: 50px;
+              }
+
+              .num{
+                width: 100%;
+                font-size: 20px;
+                color: gray;
+                text-align: center;
+              }
+        }
+        
+      }
+    }
+  }
