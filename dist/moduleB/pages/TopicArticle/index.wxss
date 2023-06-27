@@ -1,0 +1,156 @@
+.topic-articles {
+  background-color: #FFEFEA;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 10rpx;
+}
+.topic-articles .topic-articles-box {
+  width: 90%;
+  margin: auto;
+}
+.topic-articles .topic-articles-box .topic-name {
+  width: auto;
+  height: 40rpx;
+  background: #fff;
+  color: #0C8A76;
+  font-weight: 600;
+  font-size: 30rpx;
+  padding-bottom: 6rpx;
+  border-radius: 15rpx;
+  padding: 15rpx;
+}
+.topic-articles .topic-articles-box .cards {
+  margin-top: 30rpx;
+  width: 100%;
+}
+.topic-articles .post-article {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  background-color: #6b6b6b;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  right: 20rpx;
+  bottom: 75rpx;
+}
+.topic-articles .post-article .post-article-img {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.card {
+  min-height: 350rpx;
+  background-color: #ffffff;
+  border-radius: 15rpx;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  margin-bottom: 20rpx;
+}
+.card .cardInfo {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.card .cardInfo .cardUser {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card .cardInfo .cardUser .cardUserImg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+}
+.card .cardInfo .cardUser .cardUserName {
+  margin-left: 20rpx;
+  width: 200rpx;
+}
+.card .cardInfo .cardMore {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 250rpx;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.card .cardInfo .cardMore .cardMoreInfo {
+  width: 50rpx;
+  height: 50rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.card .cardInfo .cardMore .cardTime {
+  font-size: 26rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.card .cardContent {
+  width: auto;
+  min-height: 180rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  background-color: #efefef;
+  padding: 20rpx;
+}
+.card .cardContent .cardContentText {
+  display: block;
+  word-break: normal;
+  word-wrap: break-word;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.card .cardContent .cardContentImage {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #101010;
+  margin-right: 10rpx;
+}
+.card .cardLikeBox {
+  width: auto;
+  height: 60rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card .cardLikeBox .cardLikeBox2 {
+  width: 200rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card .cardLikeBox .cardLikeBox2 .cardLike {
+  width: 50rpx;
+  height: 50rpx;
+}
+

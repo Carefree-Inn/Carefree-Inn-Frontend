@@ -12,13 +12,23 @@ export default ({
     navigationBarTextStyle: 'black'
   },
   subpackages: [//分包
-    {
-      root: "moduleA",
-      pages: [
-       'pages/Homepage/index'
-      ],
-      independent: false
-    }, ],
+      {
+        root: "moduleA",
+        pages: [
+          'pages/Homepage/index'
+        ],
+        independent: false
+      },
+      {
+        root: "moduleB",
+        pages: [
+          'pages/Article/index',
+          'pages/PostArticle/index',
+          'pages/TopicArticle/index',
+          'pages/InitUserInfo/index'
+        ],
+      }
+    ],
     tabBar: {
       /* tab页面必须放在主包里 */
       list: [

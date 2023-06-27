@@ -1,0 +1,59 @@
+.postArticle {
+  background-color: #101010;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 10rpx;
+}
+.postArticle .postArticleTop {
+  width: 90%;
+  margin: 20rpx auto auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.postArticle .postArticleTop .postArticleButton {
+  background-color: #6b6b6b;
+  width: 160rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.postArticle .postArticleContent {
+  width: -10%;
+  margin: 20rpx auto auto;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  min-height: 75vh;
+  padding: 30rpx 50rpx 30rpx 50rpx;
+}
+.postArticle .postArticleEndBar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  background-color: #cecece;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.postArticle .postArticleEndBar .postArticleImg1 {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 50rpx;
+}
+.postArticle .postArticleEndBar .postArticleImg2 {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 50rpx;
+}
+

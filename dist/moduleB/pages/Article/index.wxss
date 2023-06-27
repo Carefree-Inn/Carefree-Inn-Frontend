@@ -1,0 +1,171 @@
+.Article {
+  background-color: #101010;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 10rpx;
+}
+.Article .ArticleBox {
+  width: 90%;
+  margin: 20rpx auto auto;
+}
+.Article .ArticleBox .card {
+  min-height: 350rpx;
+  background-color: #ffffff;
+  border-radius: 15rpx;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  margin-bottom: 20rpx;
+}
+.Article .ArticleBox .card .cardInfo {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.Article .ArticleBox .card .cardInfo .cardUser {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Article .ArticleBox .card .cardInfo .cardUser .cardUserImg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+}
+.Article .ArticleBox .card .cardInfo .cardUser .cardUserName {
+  margin-left: 20rpx;
+  width: 200rpx;
+}
+.Article .ArticleBox .card .cardInfo .cardMore {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 250rpx;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.Article .ArticleBox .card .cardInfo .cardMore .cardMoreInfo {
+  width: 50rpx;
+  height: 50rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.Article .ArticleBox .card .cardInfo .cardMore .cardTime {
+  font-size: 26rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.Article .ArticleBox .card .cardContent {
+  width: auto;
+  min-height: 180rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  background-color: #efefef;
+  padding: 20rpx;
+}
+.Article .ArticleBox .card .cardContent .cardContentText {
+  display: block;
+  word-break: normal;
+  word-wrap: break-word;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.Article .ArticleBox .card .cardContent .cardContentImage {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #101010;
+  margin-right: 10rpx;
+}
+.Article .ArticleBox .articleComments {
+  min-height: 350rpx;
+  background-color: #ffffff;
+  border-radius: 15rpx;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+}
+.Article .articlePostComment {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  background-color: #cecece;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Article .articlePostComment .articlePostCommentInput {
+  background-color: #9a9a9a;
+  width: 500rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  padding: 0 10rpx 0 10rpx;
+}
+.Article .articlePostComment .articleLike {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.articleComment {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  min-height: 150rpx;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2rpx #f0f0f0 solid;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.articleComment .cardUser {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.articleComment .cardUser .cardUserImg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+}
+.articleComment .articleCommentContent {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+}
+.articleComment .articleCommentContent .articleCommentUserName {
+  color: #babac9;
+}
+.articleComment .articleCommentLike {
+  width: 10%;
+  height: 80%;
+}
+.articleComment .articleCommentLike .articleCommentLikeImg {
+  width: 50rpx;
+  height: 50rpx;
+}
+

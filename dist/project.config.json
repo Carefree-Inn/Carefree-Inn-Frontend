@@ -22,12 +22,29 @@
     "minifyWXSS": true,
     "disableUseStrict": false,
     "ignoreUploadUnusedFiles": true,
-    "minifyWXML": true
+    "minifyWXML": true,
+    "useStaticServer": true,
+    "showES6CompileOption": false,
+    "checkInvalidKey": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useCompilerPlugins": false,
+    "condition": false
   },
   "compileType": "miniprogram",
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 4
+  },
+  "appid": "touristappid",
+  "libVersion": "2.25.3",
+  "srcMiniprogramRoot": "dist/",
+  "packOptions": {
+    "ignore": [],
+    "include": []
   }
 }

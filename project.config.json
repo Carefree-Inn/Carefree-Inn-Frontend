@@ -31,7 +31,8 @@
             "disablePlugins": [],
             "outputPath": ""
         },
-        "useCompilerPlugins": false
+        "useCompilerPlugins": false,
+        "condition": false
     },
     "compileType": "miniprogram",
     "condition": {},
@@ -39,8 +40,8 @@
         "tabIndent": "insertSpaces",
         "tabSize": 4
     },
-    "appid": "wx1a35eb50136806a3",
-    "libVersion": "2.30.3",
+    "appid": "touristappid",
+    "libVersion": "2.25.3",
     "srcMiniprogramRoot": "dist/",
     "packOptions": {
         "ignore": [],
