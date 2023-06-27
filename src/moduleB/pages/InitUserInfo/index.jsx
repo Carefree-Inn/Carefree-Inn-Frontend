@@ -3,12 +3,13 @@ import Taro from '@tarojs/taro'
 import { View, Image, Input, Radio} from '@tarojs/components'
 import './index.less'
 import add from '../../../Images/add.png'
+import { putData } from '../../../Service/fetch'
 
 
 export default function InitUserInfo() {
     
     const [name,setName] = useState('')
-    const [sex,setSex] = useState('')
+    const [sex,setSex] = useState(0)
     const [avatar,setAvatar] = useState(add)
 
     const chooseAvatar = () => {
@@ -24,12 +25,24 @@ export default function InitUserInfo() {
                     filePath: path,
                     name: 'image',
                     success(res){
-                        console.log(res.data)
-
+                        const resData = JSON.parse(res.data)
+                        setAvatar(resData.data)
                     }
                 })
             }
         })  
+    }
+
+    const submit = () => {
+        putData('/user/profile',{
+            avatar: avatar,
+            nickname: name,
+            sex: sex
+        }).then(
+            data => {
+                console.log(data)
+            }
+        )
     }
 
     return (
@@ -49,12 +62,12 @@ export default function InitUserInfo() {
                     <View className='user-sex'>
                         <View className='sex' >性&nbsp;&nbsp;别</View>
                         <View className='sex-radio'>
-                            <Radio value='男' color='#E4ACAC' onClick={() => setSex('男')} checked={sex === '男'?true:false}>男</Radio>
-                            <Radio value='女' color='#E4ACAC' onClick={() => setSex('女')} checked={sex === '女'?true:false}>女</Radio>
+                            <Radio value='男' color='#E4ACAC' onClick={() => setSex(0)} checked={sex === 0?true:false}>男</Radio>
+                            <Radio value='女' color='#E4ACAC' onClick={() => setSex(1)} checked={sex === 1?true:false}>女</Radio>
                         </View>
                     </View>
                 </View>
-                <View className='submit'>提交</View>
+                <View className='submit' onClick={submit}>提交</View>
             </View>
         </View>
     )
