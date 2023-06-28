@@ -2,7 +2,7 @@ import Taro , { useReady,getCurrentInstance,useReachBottom}from '@tarojs/taro'
 import {  useState , useEffect} from 'react'
 import { View, Image, Button} from '@tarojs/components'
 import Mypost from '../../../Components/MyPost'
-import { getJson } from '../../../Service/fet'
+import { getJson } from '../../../Service/fetch'
 /* import Fetch from '../../../Service/fetch' */
 import './index.less'
 

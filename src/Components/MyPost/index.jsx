@@ -1,7 +1,7 @@
 import Taro from "@tarojs/taro";
 import {Image, Radio, Text, View,Textarea, Button} from "@tarojs/components";
-import { useState } from "react";
-import { deleteData, postData } from "../../Service/fet";
+import {  useState } from "react";
+import { deleteData, postData } from "../../Service/fetch";
 import more from "../../Images/more.svg";
 import like from "../../Images/like.svg";
 import likefill from "../../Images/like-fill.svg";
@@ -25,6 +25,14 @@ const Mypost = (props) => {
       
     })
   }
+
+  /* useEffect(()=>{
+    var backendResponse = content
+    var cardContentElement = document.getElementById("cardContent");
+    //var renderedContent = parseCustomTags(backendResponse);
+    cardContentElement.innerHTML = backendResponse;
+
+  },[]) */
 
 //显示举报
   function showReport(){
@@ -136,7 +144,7 @@ function handleInput(e){
 
   return (
 <>
-    <View className='card'>
+    <View className='card' onClick={goArticle}>
       <View className='cardInfo'>
         <View className='cardUser'>
           <Image className='cardUserImg' src={avatar} />
@@ -151,12 +159,14 @@ function handleInput(e){
           <View><Text className='cardTime'>{create_time}</Text></View>
         </View>
       </View>
-      <View className='cardContent' onClick={goArticle}>
-        <Text className='cardContentText'>{content}</Text>
+      <View className='cardContent' id='cardContent' >
+        <Text className='cardContentText'>试一试加图片</Text>
+        <Image className='cardContentImage' src='http://qny.yyj-freshman-blog.xyz/FiPlDTEAdr6S-7hukKv84F5H2KnF' />
+        {/* <Text className='cardContentText'>试一试加图片</Text>
+        <Image className='cardContentImage' src='http://qny.yyj-freshman-blog.xyz/FiPlDTEAdr6S-7hukKv84F5H2KnF' />
         <Image className='cardContentImage' src='' />
         <Image className='cardContentImage' src='' />
-        <Image className='cardContentImage' src='' />
-        <Image className='cardContentImage' src='' />
+        <Image className='cardContentImage' src='' /> */}
       </View>
       <View className='card_bottom'>
             <View className='category'>{category}</View>{/* 分区 */}

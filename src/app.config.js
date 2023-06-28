@@ -3,6 +3,7 @@ export default ({
     'pages/Mine/index',
     'pages/Login/index',
     'pages/Topic/index',
+    
     'pages/Ground/index'
   ],
   window: {
@@ -21,7 +22,18 @@ export default ({
        'pages/MyReply/index'
       ],
       independent: false
-    }, ],
+    }, 
+    /* {
+      root: "moduleB",
+      pages: [
+        'pages/Article/index',
+        'pages/PostArticle/index',
+        'pages/TopicArticle/index',
+        'pages/InitUserInfo/index',
+        'pages/TopicSearchResult/index'
+      ],
+    } */
+  ],
     tabBar: {
       /* tab页面必须放在主包里 */
       list: [

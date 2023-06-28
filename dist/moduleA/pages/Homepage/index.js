@@ -16,7 +16,7 @@
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
 /* harmony import */ var _Components_MyPost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Components/MyPost */ "./src/Components/MyPost/index.jsx");
-/* harmony import */ var _Service_fet__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Service/fet */ "./src/Service/fet.jsx");
+/* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Service/fetch */ "./src/Service/fetch.jsx");
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.less */ "./src/moduleA/pages/Homepage/index.less");
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
@@ -66,7 +66,7 @@ var Homepage = function Homepage() {
     setAvatar(param.avatar);
   });
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_5__[/* getJson */ "b"])('/post/user?page=' + page + 1 + '&limit=' + 10).then(function (res) {
+    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_5__[/* getJson */ "b"])('/post/user?page=' + page + 1 + '&limit=' + 10).then(function (res) {
       console.log(res.data);
       if (res.data.length > 0) {
         setBottom(false);

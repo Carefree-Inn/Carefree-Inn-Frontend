@@ -1,7 +1,7 @@
 import Taro from '@tarojs/taro'
 import { View, Image,Text, Input, Radio, Button} from '@tarojs/components'
 import { useState,useEffect } from 'react'
-import { getJson,putData } from '../../../Service/fet'
+import { getJson,putData } from '../../../Service/fetch'
 import confirm from '../../../Images/confirm.png'
 import './index.less'
 

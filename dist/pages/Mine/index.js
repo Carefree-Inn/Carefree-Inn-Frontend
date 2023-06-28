@@ -15,7 +15,7 @@
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
-/* harmony import */ var _Service_fet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Service/fet */ "./src/Service/fet.jsx");
+/* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Service/fetch */ "./src/Service/fetch.jsx");
 /* harmony import */ var _Images_avatar_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Images/avatar.png */ "./src/Images/avatar.png");
 /* harmony import */ var _Images_avatar_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Images_avatar_png__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Images_home_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Images/home.png */ "./src/Images/home.png");
@@ -126,7 +126,7 @@ var Mine = function Mine() {
     }, 2000);
   }
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/user/profile', {}).then(function (res) {
+    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/user/profile', {}).then(function (res) {
       setName(res.data.nickname);
       setAvatar(res.data.avatar);
       setDays(res.data.days);
@@ -134,7 +134,7 @@ var Mine = function Mine() {
     });
   }, []);
   Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["usePullDownRefresh"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/user/profile', {}).then(function (res) {
+    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/user/profile', {}).then(function (res) {
       setName(res.data.nickname);
       setAvatar(res.data.avatar);
       setDays(res.data.days);

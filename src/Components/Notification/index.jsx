@@ -3,15 +3,15 @@ import {Image, Text, View} from "@tarojs/components";
 import { useEffect, useState } from "react";
 //import mine from '../../Images/avatar.png'
 import './index.less'
-import { getJson } from "../../Service/fet";
+import { getJson } from "../../Service/fetch";
 
 
 
 const Notification = (props) =>{
 
-    const {comment_name,like_name, create_time, comment_time,avatar,id,content/* is_to_post */} = props
+    const {comment_name,like_name, create_time, comment_time,avatar,id,content, is_to_post} = props
     const [type,setType] = useState(0) //0:点赞 1:评论
-   // const [r_comment,setR_comment] = useState()
+    const [r_comment,setR_comment] = useState()
     const [post,setPost] = useState('')
 
     useEffect(()=>{
@@ -21,9 +21,9 @@ const Notification = (props) =>{
             setType(0)
         }
         else{
-           /*  if(is_to_post==false)//回复的是评论
+            if(is_to_post==false)//回复的是评论
                 setR_comment(true)
-            else//对帖子的评论 */
+            else//对帖子的评论
                 setType(1)
         }
         getJson(
@@ -45,7 +45,7 @@ const Notification = (props) =>{
                     <Image className='img' src={avatar}></Image>
                 </View>
                 <View className='text'>
-                    <View className='top'><Text className='name'>{comment_name?comment_name:like_name}</Text>&nbsp;&nbsp;{type?/* r_comment? *//* '回复': */'评论':'点赞'}了我的{/* {r_comment? */}评论{/* :'帖子'}  */} </View>
+                    <View className='top'><Text className='name'>{comment_name?comment_name:like_name}</Text>&nbsp;&nbsp;{type?r_comment?'回复':'评论':'点赞'}了我的{r_comment?'评论':'帖子' } </View>
                     <View className='comment'>{content}</View>
                     <Text className='time'>{create_time?create_time:comment_time}</Text>
                 </View>

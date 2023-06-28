@@ -2,7 +2,7 @@ import { useReachBottom}from '@tarojs/taro'
 /* import {  useState , useEffect} from 'react' */
 import { View} from '@tarojs/components'
 import { useEffect, useState } from 'react'
-import { getJson } from '../../../Service/fet'
+import { getJson } from '../../../Service/fetch'
 /* import { getJson } from '../../../Service/fet' */
 import Mypost from '../../../Components/MyPost'
 /* import Fetch from '../../../Service/fetch' */

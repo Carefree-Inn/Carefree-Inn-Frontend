@@ -15,7 +15,7 @@
 /* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Service_fet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Service/fet */ "./src/Service/fet.jsx");
+/* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Service/fetch */ "./src/Service/fetch.jsx");
 /* harmony import */ var _Images_more_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Images/more.svg */ "./src/Images/more.svg");
 /* harmony import */ var _Images_more_svg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Images_more_svg__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Images_like_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Images/like.svg */ "./src/Images/like.svg");
@@ -79,6 +79,13 @@ var Mypost = function Mypost(props) {
     });
   };
 
+  /* useEffect(()=>{
+    var backendResponse = content
+    var cardContentElement = document.getElementById("cardContent");
+    //var renderedContent = parseCustomTags(backendResponse);
+    cardContentElement.innerHTML = backendResponse;
+   },[]) */
+
   //显示举报
   function showReport() {
     setShow(!show);
@@ -132,7 +139,7 @@ var Mypost = function Mypost(props) {
       post_id: id,
       feedback_type: feedback
     };
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* postData */ "c"])('/user/feedback', data).then(function (res) {
+    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_4__[/* postData */ "c"])('/user/feedback', data).then(function (res) {
       console.log(res);
       _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.showToast({
         title: '举报成功',
@@ -157,7 +164,7 @@ var Mypost = function Mypost(props) {
       success: function success(res) {
         if (res.confirm) {
           console.log('用户点击确定');
-          Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* deleteData */ "a"])('/post?post_id=' + id).then(function (ress) {
+          Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_4__[/* deleteData */ "a"])('/post?post_id=' + id).then(function (ress) {
             console.log(ress);
             _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.showToast({
               title: '删除成功!',
@@ -176,6 +183,7 @@ var Mypost = function Mypost(props) {
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["Fragment"], {
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
       className: "card",
+      onClick: goArticle,
       children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
         className: "cardInfo",
         children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
@@ -213,22 +221,13 @@ var Mypost = function Mypost(props) {
         })]
       }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
         className: "cardContent",
-        onClick: goArticle,
+        id: "cardContent",
         children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Text */ "e"], {
           className: "cardContentText",
-          children: content
+          children: "\u8BD5\u4E00\u8BD5\u52A0\u56FE\u7247"
         }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
           className: "cardContentImage",
-          src: ""
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
-          className: "cardContentImage",
-          src: ""
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
-          className: "cardContentImage",
-          src: ""
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
-          className: "cardContentImage",
-          src: ""
+          src: "http://qny.yyj-freshman-blog.xyz/FiPlDTEAdr6S-7hukKv84F5H2KnF"
         })]
       }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
         className: "card_bottom",
@@ -417,10 +416,10 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFs
 
 /***/ }),
 
-/***/ "./src/Service/fet.jsx":
-/*!*****************************!*\
-  !*** ./src/Service/fet.jsx ***!
-  \*****************************/
+/***/ "./src/Service/fetch.jsx":
+/*!*******************************!*\
+  !*** ./src/Service/fetch.jsx ***!
+  \*******************************/
 /*! exports provided: postData, getJson, putData, deleteData */
 /*! exports used: deleteData, getJson, postData, putData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -443,9 +442,8 @@ var Fetch = function Fetch(url) {
   var method = arguments.length > 2 ? arguments[2] : undefined;
   var header = {
     'content-type': 'application/json',
-    'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBY2NvdW50IjoiMjAyMTIxMzk3NSIsImV4cCI6MTY4ODM3NDQ5NiwiaXNzIjoiQ0NOVS1Jbm4ifQ.OvRlQ6rJ4xDbGSb1tmhcSfGYE0YEe2Ms6QH4xOijayY' /*  Taro.getStorageSync('token') */
+    'Authorization': _tarojs_taro__WEBPACK_IMPORTED_MODULE_2___default.a.getStorageSync('token')
   };
-
   return _tarojs_taro__WEBPACK_IMPORTED_MODULE_2___default.a.request({
     url: url,
     data: data,

@@ -15,7 +15,7 @@
 /* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Service_fet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Service/fet */ "./src/Service/fet.jsx");
+/* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Service/fetch */ "./src/Service/fetch.jsx");
 /* harmony import */ var _Images_confirm_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Images/confirm.png */ "./src/Images/confirm.png");
 /* harmony import */ var _Images_confirm_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Images_confirm_png__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.less */ "./src/moduleA/pages/EditInfo/index.less");
@@ -46,7 +46,7 @@ var Edit = function Edit() {
     avatar = _useState6[0],
     setAvatar = _useState6[1];
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/user/profile', {}).then(function (res) {
+    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/user/profile', {}).then(function (res) {
       setUsername(res.data.nickname);
       setAvatar(res.data.avatar);
       setSex(res.data.sex);
@@ -64,7 +64,7 @@ var Edit = function Edit() {
       sex: sex,
       avatar: avatar
     };
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* putData */ "d"])('/user/profile', data).then(function (res) {
+    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_4__[/* putData */ "d"])('/user/profile', data).then(function (res) {
       console.log(res);
       _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.showToast({
         title: '修改成功！',
@@ -186,7 +186,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/babel-loader/lib!./index.jsx */ "./node_modules/babel-loader/lib/index.js!./src/moduleA/pages/EditInfo/index.jsx");
 
 
-var config = {};
+var config = {"navigationBarTitleText":"信息编辑"};
 
 
 var inst = Page(Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageConfig"])(_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], 'moduleA/pages/EditInfo/index', {root:{cn:[]}}, config || {}))

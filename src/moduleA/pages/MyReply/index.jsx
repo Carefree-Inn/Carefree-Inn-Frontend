@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Notification from '../../../Components/Notification'
 /* import Fetch from '../../../Service/fetch' */
 import './index.less'
-import { getJson } from '../../../Service/fet'
+import { getJson } from '../../../Service/fetch'
 
 
 

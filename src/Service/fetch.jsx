@@ -1,25 +1,27 @@
 import Taro from '@tarojs/taro';
 
-const preHttp = 'http://139.196.30.123:8080/inn/api/v1';
-const Fetch = (url, data = {}, method = 'GET') => {
+
+const preUrl = 'http://139.196.30.123:8080/inn/api/v1';
+const Fetch = (url, data = {}, method) => {
   const header = {
     'content-type': 'application/json',
-    'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBY2NvdW50IjoiMjAyMTIxMzk3NSIsImV4cCI6MTY4ODM0OTA4MywiaXNzIjoiQ0NOVS1Jbm4ifQ.e-H3G_z-xDM9UG9-d9FGaRUtWAQVjzclpjuOgDR91B8'/* Taro.getStorageSync('token') */
+    'Authorization':Taro.getStorageSync('token')
   };
 
   return Taro.request({
-    url: preHttp + url,
+    url: url,
     data,
     method,
     header
   }).then(res => {
     switch (res.statusCode) {
-      case 200:
+      case 200: {
         if (res.data) {
           return res.data;
         } else {
-          return res.code; // 业务逻辑错误，返回业务错误码
+          return res.errMsg;
         }
+      }
       case 400:
         throw new Error('没有权限访问');
       case 401:
@@ -28,6 +30,8 @@ const Fetch = (url, data = {}, method = 'GET') => {
         throw new Error('not found');
       case 500:
         throw new Error('服务器错误');
+      default:
+        throw new Error(res.errMsg)
     }
   }).catch((e) => {
     console.log(e)
@@ -35,5 +39,22 @@ const Fetch = (url, data = {}, method = 'GET') => {
 };
 
 
+export async function postData(url = '', data = {}) {
 
-export default Fetch;
+  return await Fetch(preUrl + url, JSON.stringify(data), 'POST');
+}
+
+export async function getJson(url = '', data = {}) {
+
+  return await Fetch(preUrl + url, JSON.stringify(data), 'GET');
+}
+
+export async function putData(url = '', data = {}) {
+
+  return await Fetch(preUrl + url, JSON.stringify(data), 'PUT');
+}
+
+export async function deleteData(url = '', data = {}) {
+
+    return await Fetch(preUrl + url, JSON.stringify(data), 'DELETE');
+}
