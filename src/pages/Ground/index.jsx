@@ -11,42 +11,29 @@ const Ground = () => {
   const [area, setArea] = useState([])
   const [CategoryId, setCategoryId] = useState(1)
   const [article, setArticle] = useState([])
+  const [user, setUser] = useState([])
 
   useEffect(() => {
       getJson('/post/category/all').then(r => {
-          const sortedrdata = r.data.map((x) => x).sort((a, b) => a.CategoryId - b.CategoryId)
-          setArea(sortedrdata)
-        }
-      )
+        const sortedrdata = r.data.map((x) => x).sort((a, b) => a.CategoryId - b.CategoryId)
+        setArea(sortedrdata)
+      })
+      getJson('/user/profile').then(r => {
+        setUser(r.data)
+      })
     },
     []
   )
 
   useEffect(() => {
-    getJson('/post/category', {category_id: CategoryId}).then(r => {
+    getJson(`/post/category?category_id=${CategoryId}`).then(r => {
       setArticle(r.data)
     })
   }, [CategoryId])
 
 
   const goPostArticle = () => {
-    Taro.navigateTo({
-      url: '/moduleB/pages/PostArticle/index',
-      events: {
-        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-        acceptDataFromOpenedPage: function (data) {
-          console.log(data)
-        },
-        someEvent: function (data) {
-          console.log(data)
-        }
-      },
-      success: function (res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', {data: 'test'})
-      }
-    }).then(r => {
-    })
+    Taro.navigateTo({url: '/moduleB/pages/PostArticle/index'})
   }
 
   const changeArea = (Id) => {
@@ -68,13 +55,13 @@ const Ground = () => {
           })}
         </View>
         <View className='cards'>
-          {/*{article.map((art) => {*/}
-          {/*  <GroundArticle nickname={art.nickname} avatar={art.avatar} title={art.title} content={art.content} likes={art.likes}*/}
-          {/*    create_time={art.create_time} liked={art.liked}*/}
-          {/*  ></GroundArticle>*/}
-          {/*})}*/}
-          <GroundArticle></GroundArticle>
-          <GroundArticle></GroundArticle>
+          {article.map((art) => {
+            return (
+              <GroundArticle key='create_time' nickname={art.user_info.nickname} avatar={art.user_info.avatar} title={art.title}
+                content={art.content} likes={art.likes} comments={art.comments} account={art.user_info.account}
+                create_time={art.create_time} liked={art.liked} post_id={art.post_id} useraccount={user.account}
+              ></GroundArticle>)
+          })}
         </View>
       </View>
       <View className='groundPostArticle' onClick={goPostArticle}>

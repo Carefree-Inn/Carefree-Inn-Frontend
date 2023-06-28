@@ -15,10 +15,10 @@ const ArticleComment = () => {
         <Text className='articleCommentUserName'>用户名</Text>
         <Text>好漂亮啊</Text>
       </View>
-      <View className='articleCommentLike'>
-        <Image className='articleCommentLikeImg' src={like} />
-        <Text>123</Text>
-      </View>
+      {/*<View className='articleCommentLike'>*/}
+      {/*  <Image className='articleCommentLikeImg' src={like} />*/}
+      {/*  <Text>123</Text>*/}
+      {/*</View>*/}
     </View>
   )
 }

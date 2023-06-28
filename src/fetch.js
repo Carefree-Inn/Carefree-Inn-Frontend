@@ -40,16 +40,18 @@ const Fetch = (url, data = {}, method) => {
 
 
 export async function postData(url = '', data = {}) {
-
   return await Fetch(preUrl + url, JSON.stringify(data), 'POST');
+
 }
 
 export async function getJson(url = '', data = {}) {
-
   return await Fetch(preUrl + url, JSON.stringify(data), 'GET');
 }
 
 export async function putData(url = '', data = {}) {
-
   return await Fetch(preUrl + url, JSON.stringify(data), 'PUT');
+}
+
+export async function delData(url = '', data = {}) {
+  return await Fetch(preUrl + url, JSON.stringify(data), 'DELETE');
 }
