@@ -13,9 +13,6 @@ import likefill from "../../../Images/like-fill.svg";
 
 const Article = () => {
 
-  Taro.setNavigationBarTitle({
-    title: ''
-  })
 
   const router = useRouter();
   const [postId, setPostId] = useState(router.params.post_id)
@@ -87,9 +84,7 @@ const Article = () => {
             </View>
           </View>
           <View className='cardContent'>
-            {article.content}
-            {/*<Text className='cardContentText'>{article.content}</Text>*/}
-            {/*<Image className='cardContentImage' src='' />*/}
+            <View dangerouslySetInnerHTML={{__html: `${article.content}`}}></View>
           </View>
         </View>
         <View className='articleComments'>

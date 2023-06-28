@@ -1,4 +1,4 @@
-import Taro from '@tarojs/taro'
+import Taro, {usePullDownRefresh} from '@tarojs/taro'
 import {View, Input, Text, Image} from '@tarojs/components'
 import {useEffect, useState} from 'react';
 import './index.less'
@@ -31,6 +31,11 @@ const Ground = () => {
     })
   }, [CategoryId])
 
+  usePullDownRefresh(() => {
+    getJson(`/post/category?category_id=${CategoryId}`).then(r => {
+      setArticle(r.data)
+    })
+  })
 
   const goPostArticle = () => {
     Taro.navigateTo({url: '/moduleB/pages/PostArticle/index'})

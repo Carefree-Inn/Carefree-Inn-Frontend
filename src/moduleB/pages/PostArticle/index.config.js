@@ -1,4 +1,4 @@
 export default definePageConfig({
-  navigationBarTitleText: '广场',
+  navigationBarTitleText: '发布',
   enablePullDownRefresh: true
 })

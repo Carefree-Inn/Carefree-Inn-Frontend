@@ -58,7 +58,6 @@ const GroundArticle = (props) => {
   }
 
   function handleInput(e) {
-    console.log(e.detail.value)
     setReportvalue(e.detail.value)
   }
 

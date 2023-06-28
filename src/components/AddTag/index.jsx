@@ -10,7 +10,7 @@ const AddTag = (props) => {
   const inputRef = React.createRef();
   const addTag = () => {
     let content = inputRef.current.value;
-    let tags = content.split(/;|；/)
+    let tags = content.split(/,|，/)
     props.addTag(tags)
     props.hideTag()
   }
@@ -21,7 +21,9 @@ const AddTag = (props) => {
       <View className='addTagBox'>
         <View className='addTagTitle'>添加标签</View>
         <View className='addTagText'>
-          <Textarea className='addTagText1' ref={inputRef} maxlength={88} placeholder='请输入标签，多个标签用分号分隔'></Textarea>
+          <Textarea className='addTagText1' ref={inputRef} maxlength={88}
+            placeholder='请输入标签，多个标签用逗号分隔' value={props.tags}
+          ></Textarea>
         </View>
         <View className='addTagConfirm'>
           <View className='addTagButton' onClick={props.hideTag}>取消</View>

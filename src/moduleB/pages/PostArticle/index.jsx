@@ -9,10 +9,6 @@ import AddTag from "../../../components/AddTag";
 
 
 const PostArticle = () => {
-//
-  Taro.setNavigationBarTitle({
-    title: '发布'
-  })
 
   const [image, setImage] = useState([])
   const [tempImage, setTempImage] = useState([])
@@ -53,7 +49,7 @@ const PostArticle = () => {
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
-        setTempImage([...tempImage, tempFilePaths])
+        setTempImage([...tempImage, ...tempFilePaths])
         for (const img in tempFilePaths) {
           Taro.uploadFile({
             url: 'http://139.196.30.123:8080/inn/api/v1/upload/file',
@@ -61,7 +57,7 @@ const PostArticle = () => {
             name: 'image',
             success(r) {
               const obj = JSON.parse(r.data);
-              setImage([...image, obj.data])
+              setImage(prevImage => [...prevImage, obj.data]) // 使用函数式更新来避免依赖旧的数组状态
             }
           })
         }
@@ -74,14 +70,14 @@ const PostArticle = () => {
   }
 
   const addTag = (e) => {
-    setTags([...tags, ...e])
+    setTags(e)
   }
 
 
   const handlePost = () => {
     let content = inputRef.current.value;
 
-    if (area1 === ['']) {
+    if (currentArea === '') {
       Taro.showModal({
         title: '提示',
         content: '请选择分区!',
@@ -118,6 +114,18 @@ const PostArticle = () => {
       "content": `<div class='cardContentText'>${content}</div>${imgStr.toString()}`,
       "title": ".",
       "tags": tags.map(x => ({tag: x}))
+    }).then(res => {
+      Taro.showToast({
+        title: '发布成功',
+        icon: 'success',
+        duration: 1000
+      })
+    }).catch((error) => {
+      Taro.showToast({
+        title: '发布失败,请稍后再试',
+        icon: 'error',
+        duration: 2000
+      })
     })
 
     inputRef.current.value = '';
@@ -151,7 +159,13 @@ const PostArticle = () => {
           {image.map((img) => {
             return (
               <View className='postImageBox'>
-                <Image className='postImage' mode='widthFix' src={img} />
+                <Image className='postImage' onClick={() => {
+                  Taro.previewImage({
+                    current: img, // 当前显示图片的http链接
+                    urls: image // 需要预览的图片http链接列表
+                  })
+                }} mode='widthFix' src={img}
+                />
               </View>
             )
           })}
@@ -161,7 +175,7 @@ const PostArticle = () => {
         <Image className='postArticleImg1' src={postImg} onClick={postImage} />
         <Image className='postArticleImg2' src={hashTag} onClick={hideTag} />
       </View>
-      {hide ? <AddTag hideTag={hideTag} addTag={addTag}></AddTag> : ''}
+      {hide ? <AddTag hideTag={hideTag} addTag={addTag} tags={tags}></AddTag> : ''}
     </View>
   )
 }
