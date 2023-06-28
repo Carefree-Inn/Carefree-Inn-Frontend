@@ -55,7 +55,19 @@
   font-size: 25rpx;
   line-height: 50rpx;
   text-align: center;
-  border-radius: 5rpx;
+  border-radius: 10rpx;
+  background-color: #EEDCDC;
+}
+.card .cardInfo .cardMore .more .delete {
+  position: absolute;
+  right: 2rpx;
+  top: 90rpx;
+  width: 80rpx;
+  height: 50rpx;
+  font-size: 25rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 10rpx;
   background-color: #EEDCDC;
 }
 .card .cardInfo .cardMore .more .none {
@@ -102,7 +114,35 @@
   background-color: #101010;
   margin-right: 10rpx;
 }
-.card .cardLikeBox {
+.card .card_bottom {
+  width: 90vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.card .card_bottom .category {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10rpx;
+  font-size: 20rpx;
+  color: white;
+  background-color: #E4ACAC;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10rpx;
+  border: 0;
+  height: 25rpx;
+  line-height: 25rpx;
+}
+.card .card_bottom .cardLikeBox {
   width: auto;
   height: 80rpx;
   display: -webkit-flex;
@@ -115,7 +155,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.card .cardLikeBox .cardLikeBox2 {
+.card .card_bottom .cardLikeBox .cardLikeBox2 {
   width: 200rpx;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -127,15 +167,15 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.card .cardLikeBox .cardLikeBox2 .box3 {
+.card .card_bottom .cardLikeBox .cardLikeBox2 .box3 {
   width: 50rpx;
   height: 80rpx;
 }
-.card .cardLikeBox .cardLikeBox2 .box3 .cardLike {
+.card .card_bottom .cardLikeBox .cardLikeBox2 .box3 .cardLike {
   width: 50rpx;
   height: 50rpx;
 }
-.card .cardLikeBox .cardLikeBox2 .box3 .num {
+.card .card_bottom .cardLikeBox .cardLikeBox2 .box3 .num {
   width: 100%;
   font-size: 20rpx;
   color: gray;

@@ -53,3 +53,8 @@ export async function putData(url = '', data = {}) {
 
   return await Fetch(preUrl + url, JSON.stringify(data), 'PUT');
 }
+
+export async function deleteData(url = '', data = {}) {
+
+    return await Fetch(preUrl + url, JSON.stringify(data), 'DELETE');
+}

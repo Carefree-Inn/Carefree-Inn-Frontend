@@ -26,19 +26,16 @@ const Likepost=()=>{
         ).then(res=>{
             console.log(res.data)
             if(res.data.length>0)
-               { setPosts(posts.concat(res.data))
+               { setBottom(false)
+                setPosts(posts.concat(res.data))
                 setPage(page+1)}
             else
                 setBottom(true)
         })
     },[fresh])
-
-    function test(){
-        console.log(posts)
-    }
-
+    
     useReachBottom(() => {
-        setFresh(true)
+        setFresh(!fresh)
        // setPage(page+1)
      })
     
@@ -48,7 +45,7 @@ const Likepost=()=>{
             <View className='like'>
                 {posts.map((item)=>{
                     return(
-                        <View className='post' onClick={test} key={item.post_id}>
+                        <View className='post'  key={item.post_id}>
                             <Mypost id={item.post_id} avatar={item.user_info.avatar} nickname={item.user_info.nickname} create_time={item.create_time}likes={item.likes} liked={item.liked} title={item.title} content={item.content} />
                         </View>
                     )

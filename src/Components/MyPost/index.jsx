@@ -1,7 +1,7 @@
 import Taro from "@tarojs/taro";
 import {Image, Radio, Text, View,Textarea, Button} from "@tarojs/components";
 import { useState } from "react";
-import { postData } from "../../Service/fet";
+import { deleteData, postData } from "../../Service/fet";
 import more from "../../Images/more.svg";
 import like from "../../Images/like.svg";
 import likefill from "../../Images/like-fill.svg";
@@ -10,14 +10,15 @@ import message from "../../Images/message.svg";
 import "./index.less";
 
 const Mypost = (props) => {
+    /* 我发布的 页面帖子组件 */
 
     const [show,setShow] = useState(false)
-    const {nickname, avatar, content,liked, create_time, likes, comments, id} = props
+    const {nickname, avatar, content,liked, create_time, likes, comments, id, category} = props
     
     const [feedback,setFeedback] = useState('')//反馈类型
     const [modal,setModal] = useState(false)
     const [reportvalue,setReportvalue] = useState('')//反馈内容
-
+    
   const goArticle = () => {
     Taro.navigateTo({
       url: `/moduleB/pages/Article/index?post_id=${id}`,
@@ -106,6 +107,33 @@ function handleInput(e){
 
   }
 
+  function handleDelete(){
+
+    Taro.showModal({
+        title: '提示',
+        content: '确认删除这个帖子吗?',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            deleteData(
+                '/post?post_id=' + id
+                ).then(ress=>{
+                    console.log(ress)
+                    Taro.showToast({
+                        title: '删除成功!',
+                        icon: 'success',
+                        duration: 2000
+                      })
+                }).catch((error)=>{
+                    console.log(error)
+                })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+  }} )
+  
+  }
+
   return (
 <>
     <View className='card'>
@@ -118,6 +146,7 @@ function handleInput(e){
             <View className='more'>
                 <Image className='cardMoreInfo' src={more}  onClick={showReport} />
                 <View className={show?'report':'none'} onClick={report}>举报</View>
+                <View className={show?'delete':'none'} onClick={handleDelete}>删除</View>
             </View>
           <View><Text className='cardTime'>{create_time}</Text></View>
         </View>
@@ -129,18 +158,21 @@ function handleInput(e){
         <Image className='cardContentImage' src='' />
         <Image className='cardContentImage' src='' />
       </View>
-      <View className='cardLikeBox'>
-        <View className='cardLikeBox2'>
-            <View className='box3'>
-                <Image className='cardLike' src={liked ? likefill : like} />
-                <View className='num'>{likes}</View>
-            </View>
-            <View className='box3'>
-                <Image className='cardLike' src={message} />
-                <View className='num'>{comments}</View>
+      <View className='card_bottom'>
+            <View className='category'>{category}</View>{/* 分区 */}
+            <View className='cardLikeBox'>
+                <View className='cardLikeBox2'>
+                    <View className='box3'>
+                        <Image className='cardLike' src={liked ? likefill : like} />
+                        <View className='num'>{likes}</View>
+                    </View>
+                    <View className='box3'>
+                        <Image className='cardLike' src={message} />
+                        <View className='num'>{comments}</View>
+                    </View>
+                </View>
             </View>
         </View>
-      </View>
     </View>
     <View className='m_box' style={{display: modal?'block':'none'}}>
         <View className='modal' >

@@ -46,7 +46,7 @@ var Edit = function Edit() {
     avatar = _useState6[0],
     setAvatar = _useState6[1];
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "a"])('/user/profile', {}).then(function (res) {
+    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/user/profile', {}).then(function (res) {
       setUsername(res.data.nickname);
       setAvatar(res.data.avatar);
       setSex(res.data.sex);
@@ -64,7 +64,7 @@ var Edit = function Edit() {
       sex: sex,
       avatar: avatar
     };
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* putData */ "c"])('/user/profile', data).then(function (res) {
+    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* putData */ "d"])('/user/profile', data).then(function (res) {
       console.log(res);
       _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.showToast({
         title: '修改成功！',

@@ -45,10 +45,22 @@
                 font-size: 25px;
                 line-height: 50px;
                 text-align: center;
-                border-radius: 5px;
+                border-radius: 10px;
                 background-color: #EEDCDC;
             }
     
+            .delete{
+                position: absolute;
+                right: 2px;
+                top: 90px;
+                width: 80px;
+                height: 50px;
+                font-size: 25px;
+                line-height: 50px;
+                text-align: center;
+                border-radius: 10px;
+                background-color: #EEDCDC;
+            }
             .none{
                 display: none;
             }
@@ -95,14 +107,34 @@
         margin-right: 10px;
       }
     }
-  
+.card_bottom{
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+   // background-color: aqua;
+
+    .category{
+        width: max-content;
+        padding: 10px;
+        font-size: 20px;
+        color: white;
+        background-color: #E4ACAC;
+        display: flex;
+        border-radius: 10px;
+        border: 0;
+        height: 25px;
+        line-height: 25px;
+      }
+
     .cardLikeBox {
       width: auto;
       height: 80px;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-  
+      //background-color: aquamarine;
+
       .cardLikeBox2 {
         width: 200px;
         display: flex;
@@ -128,7 +160,9 @@
         
       }
     }
-  }
+ 
+}
+}
 
   .m_box{
     width: 100%;

@@ -41,11 +41,19 @@ var MyReply = function MyReply() {
     _useState4 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState3, 2),
     his = _useState4[0],
     setHis = _useState4[1]; //历史通知
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(1),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(0),
     _useState6 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState5, 2),
     page = _useState6[0],
     setPage = _useState6[1];
   var limit = 10;
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
+    _useState8 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState7, 2),
+    fresh = _useState8[0],
+    setFresh = _useState8[1]; //刷新标识
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
+    _useState10 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState9, 2),
+    bottom = _useState10[0],
+    setBottom = _useState10[1];
   Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["useReady"])(function () {
     // console.log('Ready')
     var params = Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["getCurrentInstance"])();
@@ -57,15 +65,22 @@ var MyReply = function MyReply() {
     // setMsg(data.data)
   });
 
+  //触底刷新
   Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["useReachBottom"])(function () {
-    setPage(page + 1);
+    setFresh(!fresh);
+    //setPage(page+1)
   });
+
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_6__[/* getJson */ "a"])('/notification/history?page=' + page + '&limit=' + limit).then(function (res) {
+    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_6__[/* getJson */ "b"])('/notification/history?page=' + page + 1 + '&limit=' + limit).then(function (res) {
       console.log(res);
-      setHis(res.data);
+      if (res.data.length > 0) {
+        setBottom(false);
+        setPage(page + 1);
+        setHis(his.concat(res.data));
+      } else setBottom(true);
     });
-  }, [page]);
+  }, [fresh]);
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["Fragment"], {
     children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
       className: "reply",
@@ -76,6 +91,7 @@ var MyReply = function MyReply() {
         className: "l_box",
         children: msg.map(function (item) {
           return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_Components_Notification__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {
+            is_to_post: item.is_to_post,
             id: item.post_id,
             comment_name: item.from_user_nick_name,
             like_name: item.from_user_nickname,
@@ -94,6 +110,7 @@ var MyReply = function MyReply() {
         children: his.map(function (item) {
           return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_Components_Notification__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {
             type: item.action_type,
+            is_to_post: item.is_to_post,
             id: item.post_id,
             comment_name: item.from_user_nickname,
             like_name: item.from_user_nickname,
@@ -103,6 +120,9 @@ var MyReply = function MyReply() {
             avatar: item.from_user_avatar
           }, item.action_time);
         })
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+        className: "btm",
+        children: bottom ? '已经到底啦!' : ''
       })]
     })
   });
@@ -150,18 +170,29 @@ var Notification = function Notification(props) {
     _useState2 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
     type = _useState2[0],
     setType = _useState2[1]; //0:点赞 1:评论
+  // const [r_comment,setR_comment] = useState()
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(''),
     _useState4 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState3, 2),
     post = _useState4[0],
     setPost = _useState4[1];
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
-    if (props.like_type || props.type == 'like') {
-      console.log('like');
-      setType(0);
-    } else setType(1);
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "a"])('/post/info?post_id=' + id).then(function (res) {
+    if (props.like_type || props.type == 'like')
+      //对帖子的点赞
+      {
+        console.log('like');
+        setType(0);
+      } else {
+      /*  if(is_to_post==false)//回复的是评论
+           setR_comment(true)
+       else//对帖子的评论 */
+      setType(1);
+    }
+    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/post/info?post_id=' + id).then(function (res) {
       console.log(res);
-      setPost(res.data.content);
+      if (res.status == 500) setPost('该帖子已被删除!');
+      if (res.status == 200) setPost(res.data.content);
+    }).catch(function (error) {
+      console.log(error);
     });
   }, []);
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__["jsx"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__["Fragment"], {
@@ -180,7 +211,7 @@ var Notification = function Notification(props) {
           children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Text */ "e"], {
             className: "name",
             children: comment_name ? comment_name : like_name
-          }), "\xA0\xA0", type ? '评论' : '点赞', "\u4E86\u6211\u7684\u5E16\u5B50  "]
+          }), "\xA0\xA0", type ? /* r_comment? */ /* '回复': */'评论' : '点赞', "\u4E86\u6211\u7684", "\u8BC4\u8BBA", " "]
         }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "g"], {
           className: "comment",
           children: content
@@ -224,7 +255,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/babel-loader/lib!./index.jsx */ "./node_modules/babel-loader/lib/index.js!./src/moduleA/pages/MyReply/index.jsx");
 
 
-var config = {"navigationBarTitleText":"收到的回复"};
+var config = {"navigationBarTitleText":"点赞和评论"};
 
 
 var inst = Page(Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageConfig"])(_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], 'moduleA/pages/MyReply/index', {root:{cn:[]}}, config || {}))

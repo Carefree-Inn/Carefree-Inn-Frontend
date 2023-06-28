@@ -1,4 +1,4 @@
 export default ({
-    navigationBarTitleText: '收到的回复'
+    navigationBarTitleText: '点赞和评论'
   })
   

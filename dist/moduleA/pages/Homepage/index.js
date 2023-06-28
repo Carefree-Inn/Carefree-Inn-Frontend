@@ -66,9 +66,10 @@ var Homepage = function Homepage() {
     setAvatar(param.avatar);
   });
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_5__[/* getJson */ "a"])('/post/user?page=' + page + 1 + '&limit=' + 10).then(function (res) {
+    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_5__[/* getJson */ "b"])('/post/user?page=' + page + 1 + '&limit=' + 10).then(function (res) {
       console.log(res.data);
       if (res.data.length > 0) {
+        setBottom(false);
         setPosts(posts.concat(res.data));
         setPage(page + 1);
       } //没有新帖子, 页面回到之前
@@ -81,8 +82,9 @@ var Homepage = function Homepage() {
       url: '/moduleA/pages/EditInfo/index'
     });
   }
+  //触底刷新
   Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["useReachBottom"])(function () {
-    setFresh(true);
+    setFresh(!fresh);
     // setPage(page+1)
   });
 
@@ -117,6 +119,7 @@ var Homepage = function Homepage() {
             children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_Components_MyPost__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {
               id: item.post_id,
               avatar: item.user_info.avatar,
+              category: item.category.title,
               nickname: item.user_info.nickname,
               create_time: item.create_time,
               likes: item.likes,
@@ -152,7 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/babel-loader/lib!./index.jsx */ "./node_modules/babel-loader/lib/index.js!./src/moduleA/pages/Homepage/index.jsx");
 
 
-var config = {};
+var config = {"navigationBarTitleText":"我的主页"};
 
 
 var inst = Page(Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageConfig"])(_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], 'moduleA/pages/Homepage/index', {root:{cn:[]}}, config || {}))

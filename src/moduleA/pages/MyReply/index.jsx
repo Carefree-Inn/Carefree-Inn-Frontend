@@ -13,8 +13,11 @@ const MyReply = ()=>{
 
     const [msg,setMsg] = useState([])
     const [his,setHis] = useState([])//历史通知
-    const [page,setPage] = useState(1)
+    const [page,setPage] = useState(0)
     const limit =10
+    const [fresh,setFresh] = useState(false)//刷新标识
+    const [bottom,setBottom] = useState(false)
+
   useReady(()=>{
     // console.log('Ready')
      const params = getCurrentInstance()
@@ -26,19 +29,29 @@ const MyReply = ()=>{
     // setMsg(data.data)
    })
 
+   //触底刷新
    useReachBottom(() => {
-    setPage(page+1)
+    setFresh(!fresh)
+    //setPage(page+1)
  })
 
    useEffect(()=>{
         getJson(
-            '/notification/history?page=' + page + '&limit=' + limit
+            '/notification/history?page=' + page+1 + '&limit=' + limit
             )
         .then(res=>{
             console.log(res)
-            setHis(res.data)
+            if(res.data.length>0)
+            {   setBottom(false)
+                setPage(page+1)
+                setHis(his.concat(res.data))
+            }
+            else
+                setBottom(true)
         })
-   },[page])
+   },[fresh])
+
+
 
     return (
         <>
@@ -47,7 +60,7 @@ const MyReply = ()=>{
                 <View className='l_box'>
                     {msg.map((item)=>{
                         return(
-                            <Notification key={item.create_time} id={item.post_id} comment_name={item.from_user_nick_name} like_name={item.from_user_nickname} create_time={item.create_time} like_type={item.like_type} content={item.content} comment_time={item.comment_time} avatar={item.from_user_avatar} />
+                            <Notification key={item.create_time} is_to_post={item.is_to_post} id={item.post_id} comment_name={item.from_user_nick_name} like_name={item.from_user_nickname} create_time={item.create_time} like_type={item.like_type} content={item.content} comment_time={item.comment_time} avatar={item.from_user_avatar} />
                         )
                     })}
                 </View>
@@ -55,10 +68,11 @@ const MyReply = ()=>{
                 <View className='h_box'>
                 {his.map((item)=>{
                         return(
-                            <Notification key={item.action_time} type={item.action_type}  id={item.post_id} comment_name={item.from_user_nickname} like_name={item.from_user_nickname} create_time={item.action_time}  content={item.comment_content} comment_time={item.action_time} avatar={item.from_user_avatar} />
+                            <Notification key={item.action_time} type={item.action_type} is_to_post={item.is_to_post} id={item.post_id} comment_name={item.from_user_nickname} like_name={item.from_user_nickname} create_time={item.action_time}  content={item.comment_content} comment_time={item.action_time} avatar={item.from_user_avatar} />
                         )
                     })}  
                 </View>
+                <View className='btm'>{bottom?'已经到底啦!':''}</View>
             </View>
         </>
     )

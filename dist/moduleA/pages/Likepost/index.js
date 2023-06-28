@@ -53,19 +53,17 @@ var Likepost = function Likepost() {
     bottom = _useState8[0],
     setBottom = _useState8[1];
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "a"])('/post/liked?page=' + page + 1 + '&limit=' + limit, {}).then(function (res) {
+    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/post/liked?page=' + page + 1 + '&limit=' + limit, {}).then(function (res) {
       console.log(res.data);
       if (res.data.length > 0) {
+        setBottom(false);
         setPosts(posts.concat(res.data));
         setPage(page + 1);
       } else setBottom(true);
     });
   }, [fresh]);
-  function test() {
-    console.log(posts);
-  }
   Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["useReachBottom"])(function () {
-    setFresh(true);
+    setFresh(!fresh);
     // setPage(page+1)
   });
 
@@ -75,7 +73,6 @@ var Likepost = function Likepost() {
       children: [posts.map(function (item) {
         return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
           className: "post",
-          onClick: test,
           children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_Components_MyPost__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], {
             id: item.post_id,
             avatar: item.user_info.avatar,
@@ -112,7 +109,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/babel-loader/lib!./index.jsx */ "./node_modules/babel-loader/lib/index.js!./src/moduleA/pages/Likepost/index.jsx");
 
 
-var config = {};
+var config = {"navigationBarTitleText":"我喜欢的帖子"};
 
 
 var inst = Page(Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageConfig"])(_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], 'moduleA/pages/Likepost/index', {root:{cn:[]}}, config || {}))

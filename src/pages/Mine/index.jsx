@@ -19,7 +19,8 @@ const Mine=()=>{
   const [socketOpen, setSocketOpen] = useState(false)
   const [message,setMessage] = useState([])
   const [read,setRead] = useState(false)//通知是否查看
-
+  
+'"{"comment_id":77,"post_id":4,"to_user_account":"2021213975","comment_time":"2023-06-28 15:54-48","content":"我再回复一次你的评论","from_user_account":"2021214115","from_user_avatar":"http://qny.yyj-freshman-blog.xyz/FnSELjfIpMKxAiBFTJEG-lQdh4Yi","from_user_nick_name":"hello"}"'
   '"{"comment_id":7,"post_id":7,"to_user_account":"2021213975","comment_time":"2023-06-27 15:03-17","content":"真的很不错啊","from_user_account":"2021213975","from_user_avatar":"http://dummyimage.com/100x100","from_user_nick_name":"2021213940"}"'
   '"{"post_id":15,"to_user_account":"2021213975","create_time":"2023-06-27 15:05:59","like_type":"make","from_user_account":"2021213975","from_user_avatar":"http://dummyimage.com/100x100","from_user_nickname":"2021213940"}"'
 

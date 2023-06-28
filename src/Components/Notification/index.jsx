@@ -9,25 +9,33 @@ import { getJson } from "../../Service/fet";
 
 const Notification = (props) =>{
 
-    const {comment_name,like_name, create_time, comment_time,avatar,id,content} = props
+    const {comment_name,like_name, create_time, comment_time,avatar,id,content/* is_to_post */} = props
     const [type,setType] = useState(0) //0:点赞 1:评论
+   // const [r_comment,setR_comment] = useState()
     const [post,setPost] = useState('')
 
     useEffect(()=>{
-        if(props.like_type||props.type=='like')
+        if(props.like_type||props.type=='like')//对帖子的点赞
         { 
             console.log('like')
             setType(0)
         }
-        else
-            setType(1)
+        else{
+           /*  if(is_to_post==false)//回复的是评论
+                setR_comment(true)
+            else//对帖子的评论 */
+                setType(1)
+        }
         getJson(
             '/post/info?post_id=' + id
             )
         .then(res=>{
             console.log(res)
-            setPost(res.data.content)
-        })
+            if(res.status==500)
+                setPost('该帖子已被删除!')
+            if(res.status==200)
+                setPost(res.data.content)
+        }).catch((error)=>{console.log(error)})
     },[])
 
     return(
@@ -37,7 +45,7 @@ const Notification = (props) =>{
                     <Image className='img' src={avatar}></Image>
                 </View>
                 <View className='text'>
-                    <View className='top'><Text className='name'>{comment_name?comment_name:like_name}</Text>&nbsp;&nbsp;{type?'评论':'点赞'}了我的帖子  </View>
+                    <View className='top'><Text className='name'>{comment_name?comment_name:like_name}</Text>&nbsp;&nbsp;{type?/* r_comment? *//* '回复': */'评论':'点赞'}了我的{/* {r_comment? */}评论{/* :'帖子'}  */} </View>
                     <View className='comment'>{content}</View>
                     <Text className='time'>{create_time?create_time:comment_time}</Text>
                 </View>

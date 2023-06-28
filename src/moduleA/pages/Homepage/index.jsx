@@ -15,7 +15,7 @@ const Homepage=()=>{
   const [page,setPage] = useState(0)
   const [bottom,setBottom] = useState(false)
   const [fresh,setFresh] = useState(false)
-  
+
   useReady(()=>{
    // console.log('Ready')
     const params = getCurrentInstance()
@@ -33,7 +33,8 @@ const Homepage=()=>{
       .then(res=>{
         console.log(res.data)
         if(res.data.length>0)
-        {  setPosts(posts.concat(res.data))
+        {  setBottom(false)
+          setPosts(posts.concat(res.data))
             setPage(page+1)
             } //没有新帖子, 页面回到之前
         else
@@ -47,9 +48,9 @@ const Homepage=()=>{
       url:'/moduleA/pages/EditInfo/index'
     })
   }
-
+//触底刷新
   useReachBottom(() => {
-    setFresh(true)
+    setFresh(!fresh)
    // setPage(page+1)
  })
 
@@ -72,7 +73,7 @@ const Homepage=()=>{
         {/* </View> */}
         {posts.map((item)=>{ return(
            <View className='post' key={item.post_id}>
-              <Mypost id={item.post_id} avatar={item.user_info.avatar} nickname={item.user_info.nickname} create_time={item.create_time}likes={item.likes} comments={item.comments} liked={item.liked} title={item.title} content={item.content} />
+              <Mypost id={item.post_id} avatar={item.user_info.avatar} category={item.category.title} nickname={item.user_info.nickname} create_time={item.create_time}likes={item.likes} comments={item.comments} liked={item.liked} title={item.title} content={item.content} />
           </View>
          )})}
       </View>
