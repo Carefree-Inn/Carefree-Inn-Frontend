@@ -989,7 +989,7 @@ if (false) { var oldVNodeHook, options; }
   !*** ./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js ***!
   \*****************************************************************************/
 /*! exports provided: Ad, AdCustom, Audio, Block, Button, Camera, Canvas, Checkbox, CheckboxGroup, CoverImage, CoverView, CustomWrapper, Editor, Form, FunctionalPageNavigator, Icon, Image, Input, KeyboardAccessory, Label, LivePlayer, LivePusher, Map, MatchMedia, MovableArea, MovableView, NavigationBar, Navigator, OfficialAccount, OpenData, PageContainer, PageMeta, Picker, PickerView, PickerViewColumn, Progress, Radio, RadioGroup, RichText, ScrollView, Slider, Slot, Swiper, SwiperItem, Switch, Text, Textarea, Video, View, VoipRoom, WebView */
-/*! exports used: Button, Image, Input, Radio, Text, View */
+/*! exports used: Button, Image, Input, Radio, Text, Textarea, View */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1039,9 +1039,9 @@ if (false) { var oldVNodeHook, options; }
 /* unused harmony export SwiperItem */
 /* unused harmony export Switch */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Text; });
-/* unused harmony export Textarea */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return Textarea; });
 /* unused harmony export Video */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return View; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return View; });
 /* unused harmony export VoipRoom */
 /* unused harmony export WebView */
 var View = 'view';

@@ -1,4 +1,4 @@
-import { useReady,getCurrentInstance}from '@tarojs/taro'
+import { useReady,getCurrentInstance,useReachBottom}from '@tarojs/taro'
 import { View} from '@tarojs/components'
 import { useEffect, useState } from 'react'
 import Notification from '../../../Components/Notification'
@@ -26,6 +26,10 @@ const MyReply = ()=>{
     // setMsg(data.data)
    })
 
+   useReachBottom(() => {
+    setPage(page+1)
+ })
+
    useEffect(()=>{
         getJson(
             '/notification/history?page=' + page + '&limit=' + limit
@@ -34,7 +38,7 @@ const MyReply = ()=>{
             console.log(res)
             setHis(res.data)
         })
-   },[])
+   },[page])
 
     return (
         <>
@@ -51,7 +55,7 @@ const MyReply = ()=>{
                 <View className='h_box'>
                 {his.map((item)=>{
                         return(
-                            <Notification key={item.create_time} type={item.ActionType}  id={item.PostId} comment_name={item.FromUserNickname} like_name={item.FromUserNickname} create_time={item.ActionTime}  content={item.CommentContent} comment_time={item.ActionTime} avatar={item.FromUserAvatar} />
+                            <Notification key={item.action_time} type={item.action_type}  id={item.post_id} comment_name={item.from_user_nickname} like_name={item.from_user_nickname} create_time={item.action_time}  content={item.comment_content} comment_time={item.action_time} avatar={item.from_user_avatar} />
                         )
                     })}  
                 </View>

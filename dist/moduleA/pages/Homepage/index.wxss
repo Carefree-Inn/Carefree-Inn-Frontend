@@ -76,4 +76,9 @@
   margin: 0 30rpx;
   margin-bottom: 30rpx;
 }
+.btm {
+  width: 100%;
+  text-align: center;
+  color: gray;
+}
 

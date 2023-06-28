@@ -9,21 +9,32 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");
-/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
-/* harmony import */ var _Images_more_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Images/more.svg */ "./src/Images/more.svg");
-/* harmony import */ var _Images_more_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Images_more_svg__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Images_like_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Images/like.svg */ "./src/Images/like.svg");
-/* harmony import */ var _Images_like_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Images_like_svg__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Images_like_fill_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Images/like-fill.svg */ "./src/Images/like-fill.svg");
-/* harmony import */ var _Images_like_fill_svg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Images_like_fill_svg__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Images_message_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Images/message.svg */ "./src/Images/message.svg");
-/* harmony import */ var _Images_message_svg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Images_message_svg__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.less */ "./src/Components/MyPost/index.less");
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");
+/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Service_fet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Service/fet */ "./src/Service/fet.jsx");
+/* harmony import */ var _Images_more_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Images/more.svg */ "./src/Images/more.svg");
+/* harmony import */ var _Images_more_svg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Images_more_svg__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Images_like_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Images/like.svg */ "./src/Images/like.svg");
+/* harmony import */ var _Images_like_svg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Images_like_svg__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Images_like_fill_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Images/like-fill.svg */ "./src/Images/like-fill.svg");
+/* harmony import */ var _Images_like_fill_svg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_Images_like_fill_svg__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Images_close_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Images/close.png */ "./src/Images/close.png");
+/* harmony import */ var _Images_close_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_Images_close_png__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Images_message_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Images/message.svg */ "./src/Images/message.svg");
+/* harmony import */ var _Images_message_svg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_Images_message_svg__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./index.less */ "./src/Components/MyPost/index.less");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
+
+
+
+
+
 
 
 
@@ -34,86 +45,262 @@
 
 
 var Mypost = function Mypost(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
+    _useState2 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
+    show = _useState2[0],
+    setShow = _useState2[1];
   var nickname = props.nickname,
     avatar = props.avatar,
     content = props.content,
     liked = props.liked,
     create_time = props.create_time,
     likes = props.likes,
+    comments = props.comments,
     id = props.id;
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(''),
+    _useState4 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState3, 2),
+    feedback = _useState4[0],
+    setFeedback = _useState4[1]; //反馈类型
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
+    _useState6 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState5, 2),
+    modal = _useState6[0],
+    setModal = _useState6[1];
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(''),
+    _useState8 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState7, 2),
+    reportvalue = _useState8[0],
+    setReportvalue = _useState8[1]; //反馈内容
+
   var goArticle = function goArticle() {
-    _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default.a.navigateTo({
+    _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.navigateTo({
       url: "/moduleB/pages/Article/index?post_id=".concat(id)
     });
   };
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-    className: "card",
-    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-      className: "cardInfo",
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-        className: "cardUser",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Image */ "b"], {
-          className: "cardUserImg",
-          src: avatar
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Text */ "e"], {
-          className: "cardUserName",
-          children: nickname
-        })]
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-        className: "cardMore",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Image */ "b"], {
-            className: "cardMoreInfo",
-            src: _Images_more_svg__WEBPACK_IMPORTED_MODULE_2___default.a
-          })
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Text */ "e"], {
-            className: "cardTime",
-            children: create_time
-          })
-        })]
-      })]
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-      className: "cardContent",
-      onClick: goArticle,
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Text */ "e"], {
-        className: "cardContentText",
-        children: content
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Image */ "b"], {
-        className: "cardContentImage",
-        src: ""
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Image */ "b"], {
-        className: "cardContentImage",
-        src: ""
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Image */ "b"], {
-        className: "cardContentImage",
-        src: ""
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Image */ "b"], {
-        className: "cardContentImage",
-        src: ""
-      })]
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-      className: "cardLikeBox",
-      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-        className: "cardLikeBox2",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-          className: "box3",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Image */ "b"], {
-            className: "cardLike",
-            src: liked ? _Images_like_fill_svg__WEBPACK_IMPORTED_MODULE_4___default.a : _Images_like_svg__WEBPACK_IMPORTED_MODULE_3___default.a
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-            className: "num",
-            children: likes
+
+  //显示举报
+  function showReport() {
+    setShow(!show);
+  }
+  function report() {
+    //showmodal
+    setModal(true);
+  }
+  function closeModal() {
+    setModal(false);
+    setShow(!show);
+  }
+  function handleInput(e) {
+    console.log(e.detail.value);
+    setReportvalue(e.detail.value);
+  }
+
+  //提交反馈举报
+  function handleSubmit() {
+    if (feedback == '') {
+      _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.showModal({
+        title: '提示',
+        content: '请选择举报类型!!',
+        success: function success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定');
+          } else if (res.cancel) {
+            console.log('用户点击取消');
+          }
+        }
+      });
+      return;
+    }
+    if (reportvalue == '') {
+      _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.showModal({
+        title: '提示',
+        content: '请输入详细举报理由!',
+        success: function success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定');
+          } else if (res.cancel) {
+            console.log('用户点击取消');
+          }
+        }
+      });
+      return;
+    }
+    console.log('submit');
+    var data = {
+      content: reportvalue,
+      post_id: id,
+      feedback_type: feedback
+    };
+    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* postData */ "b"])('/user/feedback', data).then(function (res) {
+      console.log(res);
+      _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.showToast({
+        title: '举报成功',
+        icon: 'success',
+        duration: 1000
+      });
+      setModal(false);
+      setShow(false);
+    }).catch(function (error) {
+      console.log(error);
+      _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.showToast({
+        title: '举报失败,请稍后再试',
+        icon: 'error',
+        duration: 2000
+      });
+    });
+  }
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["Fragment"], {
+    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+      className: "card",
+      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+        className: "cardInfo",
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+          className: "cardUser",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
+            className: "cardUserImg",
+            src: avatar
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Text */ "e"], {
+            className: "cardUserName",
+            children: nickname
           })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-          className: "box3",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* Image */ "b"], {
-            className: "cardLike",
-            src: _Images_message_svg__WEBPACK_IMPORTED_MODULE_5___default.a
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_1__[/* View */ "f"], {
-            className: "num",
-            children: "10"
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+          className: "cardMore",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+            className: "more",
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
+              className: "cardMoreInfo",
+              src: _Images_more_svg__WEBPACK_IMPORTED_MODULE_5___default.a,
+              onClick: showReport
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+              className: show ? 'report' : 'none',
+              onClick: report,
+              children: "\u4E3E\u62A5"
+            })]
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Text */ "e"], {
+              className: "cardTime",
+              children: create_time
+            })
           })]
+        })]
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+        className: "cardContent",
+        onClick: goArticle,
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Text */ "e"], {
+          className: "cardContentText",
+          children: content
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
+          className: "cardContentImage",
+          src: ""
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
+          className: "cardContentImage",
+          src: ""
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
+          className: "cardContentImage",
+          src: ""
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
+          className: "cardContentImage",
+          src: ""
+        })]
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+        className: "cardLikeBox",
+        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+          className: "cardLikeBox2",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+            className: "box3",
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
+              className: "cardLike",
+              src: liked ? _Images_like_fill_svg__WEBPACK_IMPORTED_MODULE_7___default.a : _Images_like_svg__WEBPACK_IMPORTED_MODULE_6___default.a
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+              className: "num",
+              children: likes
+            })]
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+            className: "box3",
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
+              className: "cardLike",
+              src: _Images_message_svg__WEBPACK_IMPORTED_MODULE_9___default.a
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+              className: "num",
+              children: comments
+            })]
+          })]
+        })
+      })]
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+      className: "m_box",
+      style: {
+        display: modal ? 'block' : 'none'
+      },
+      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+        className: "modal",
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+          className: "close",
+          onClick: closeModal,
+          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Image */ "b"], {
+            src: _Images_close_png__WEBPACK_IMPORTED_MODULE_8___default.a
+          })
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+          className: "choose",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Radio */ "d"], {
+            className: "radio",
+            value: "\u8A00\u8BED\u8FB1\u9A82",
+            onClick: function onClick() {
+              return setFeedback('言语辱骂');
+            },
+            color: "#E4ACAC",
+            checked: feedback === '言语辱骂' ? true : false,
+            children: "\u8A00\u8BED\u8FB1\u9A82"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Radio */ "d"], {
+            className: "radio",
+            value: "\u4EBA\u8EAB\u653B\u51FB",
+            onClick: function onClick() {
+              return setFeedback('人身攻击');
+            },
+            color: "#E4ACAC",
+            checked: feedback === '人身攻击' ? true : false,
+            children: "\u4EBA\u8EAB\u653B\u51FB"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Radio */ "d"], {
+            className: "radio",
+            value: "\u8272\u60C5\u66B4\u529B",
+            onClick: function onClick() {
+              return setFeedback('色情暴力');
+            },
+            color: "#E4ACAC",
+            checked: feedback === '色情暴力' ? true : false,
+            children: "\u8272\u60C5\u66B4\u529B"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Radio */ "d"], {
+            className: "radio",
+            value: "\u865A\u5047\u5E7F\u544A",
+            onClick: function onClick() {
+              return setFeedback('虚假广告');
+            },
+            color: "#E4ACAC",
+            checked: feedback === '虚假广告' ? true : false,
+            children: "\u865A\u5047\u5E7F\u544A"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Radio */ "d"], {
+            className: "radio",
+            value: "\u90FD\u4E0D\u662F",
+            onClick: function onClick() {
+              return setFeedback('都不是');
+            },
+            color: "#E4ACAC",
+            checked: feedback === '都不是' ? true : false,
+            children: "\u90FD\u4E0D\u662F"
+          })]
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
+          className: "input",
+          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Textarea */ "f"], {
+            placeholder: "\u8BF7\u8BF4\u660E\u4E3E\u62A5\u7406\u7531",
+            value: reportvalue,
+            onInput: function onInput(e) {
+              return handleInput(e);
+            }
+          })
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* Button */ "a"], {
+          className: "submit",
+          onClick: function onClick() {
+            return handleSubmit();
+          },
+          children: "\u63D0\u4EA4"
         })]
       })
     })]
@@ -131,6 +318,18 @@ var Mypost = function Mypost(props) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/Images/close.png":
+/*!******************************!*\
+  !*** ./src/Images/close.png ***!
+  \******************************/
+/*! no static exports found */
+/*! exports used: default */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "Images/close.png";
 
 /***/ }),
 
@@ -187,13 +386,13 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFs
   !*** ./src/Service/fet.jsx ***!
   \*****************************/
 /*! exports provided: postData, getJson, putData */
-/*! exports used: getJson, putData */
+/*! exports used: getJson, postData, putData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export postData */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return postData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getJson; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return putData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return putData; });
 /* harmony import */ var _Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
 /* harmony import */ var _Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
 /* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");

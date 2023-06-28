@@ -45,10 +45,18 @@ var Homepage = function Homepage() {
     _useState6 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState5, 2),
     posts = _useState6[0],
     setPosts = _useState6[1];
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(1),
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
     _useState8 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState7, 2),
     page = _useState8[0],
     setPage = _useState8[1];
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+    _useState10 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState9, 2),
+    bottom = _useState10[0],
+    setBottom = _useState10[1];
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+    _useState12 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState11, 2),
+    fresh = _useState12[0],
+    setFresh = _useState12[1];
   Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["useReady"])(function () {
     // console.log('Ready')
     var params = Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["getCurrentInstance"])();
@@ -58,43 +66,53 @@ var Homepage = function Homepage() {
     setAvatar(param.avatar);
   });
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_5__[/* getJson */ "a"])('/post/user?page=' + page + '&limit=' + 10).then(function (res) {
+    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_5__[/* getJson */ "a"])('/post/user?page=' + page + 1 + '&limit=' + 10).then(function (res) {
       console.log(res.data);
-      setPosts(res.data);
+      if (res.data.length > 0) {
+        setPosts(posts.concat(res.data));
+        setPage(page + 1);
+      } //没有新帖子, 页面回到之前
+      else setBottom(true);
+      // setPosts(res.data)
     });
-  }, []);
+  }, [fresh]);
   function toEdit() {
     _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default.a.navigateTo({
       url: '/moduleA/pages/EditInfo/index'
     });
   }
+  Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["useReachBottom"])(function () {
+    setFresh(true);
+    // setPage(page+1)
+  });
+
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["Fragment"], {
-    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "g"], {
       className: "home",
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "g"], {
         className: "edit",
         children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* Button */ "a"], {
           onClick: toEdit,
           children: "\u7F16\u8F91"
         })
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "g"], {
         className: "top",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "g"], {
           className: "name",
           children: name
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "g"], {
           className: "avatar",
           children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* Image */ "b"], {
             src: avatar
           })
         })]
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "g"], {
         className: "bottom",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "g"], {
           className: "publish",
           children: "\u6211\u53D1\u5E03\u7684"
         }), posts.map(function (item) {
-          return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+          return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "g"], {
             className: "post",
             children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_Components_MyPost__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {
               id: item.post_id,
@@ -102,12 +120,16 @@ var Homepage = function Homepage() {
               nickname: item.user_info.nickname,
               create_time: item.create_time,
               likes: item.likes,
+              comments: item.comments,
               liked: item.liked,
               title: item.title,
               content: item.content
             })
           }, item.post_id);
         })]
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "g"], {
+        className: "btm",
+        children: bottom ? '已经到底啦!' : ''
       })]
     })
   });

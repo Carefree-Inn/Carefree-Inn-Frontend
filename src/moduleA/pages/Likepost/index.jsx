@@ -1,4 +1,4 @@
-import Taro , { useReachBottom}from '@tarojs/taro'
+import { useReachBottom}from '@tarojs/taro'
 /* import {  useState , useEffect} from 'react' */
 import { View} from '@tarojs/components'
 import { useEffect, useState } from 'react'
@@ -12,35 +12,35 @@ import './index.less'
 const Likepost=()=>{
 
 
-    const [page,setPage] = useState(1)
-    const limit = 3
+    const [page,setPage] = useState(0)
+    const limit = 10
     const [posts,setPosts] = useState([])
+    const [fresh,setFresh] = useState(false)
     const [bottom,setBottom] = useState(false)
 
     useEffect(()=>{
 
         getJson(
-            '/post/liked?page=' + page + '&limit=' + limit,
+            '/post/liked?page=' + page+1 + '&limit=' + limit,
             {}
         ).then(res=>{
             console.log(res.data)
             if(res.data.length>0)
-                setPosts(posts.concat(res.data))
+               { setPosts(posts.concat(res.data))
+                setPage(page+1)}
             else
                 setBottom(true)
         })
-
-
-    },[])
+    },[fresh])
 
     function test(){
         console.log(posts)
     }
 
     useReachBottom(() => {
-       setPage(page+1)
-    })
-
+        setFresh(true)
+       // setPage(page+1)
+     })
     
 
     return (

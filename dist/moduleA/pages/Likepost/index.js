@@ -35,36 +35,45 @@
 
 
 var Likepost = function Likepost() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(1),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(0),
     _useState2 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
     page = _useState2[0],
     setPage = _useState2[1];
-  var limit = 3;
+  var limit = 10;
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([]),
     _useState4 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState3, 2),
     posts = _useState4[0],
     setPosts = _useState4[1];
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
     _useState6 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState5, 2),
-    bottom = _useState6[0],
-    setBottom = _useState6[1];
+    fresh = _useState6[0],
+    setFresh = _useState6[1];
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
+    _useState8 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState7, 2),
+    bottom = _useState8[0],
+    setBottom = _useState8[1];
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "a"])('/post/liked?page=' + page + '&limit=' + limit, {}).then(function (res) {
+    Object(_Service_fet__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "a"])('/post/liked?page=' + page + 1 + '&limit=' + limit, {}).then(function (res) {
       console.log(res.data);
-      if (res.data.length > 0) setPosts(posts.concat(res.data));else setBottom(true);
+      if (res.data.length > 0) {
+        setPosts(posts.concat(res.data));
+        setPage(page + 1);
+      } else setBottom(true);
     });
-  }, []);
+  }, [fresh]);
   function test() {
     console.log(posts);
   }
   Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["useReachBottom"])(function () {
-    setPage(page + 1);
+    setFresh(true);
+    // setPage(page+1)
   });
+
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["Fragment"], {
-    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "f"], {
+    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
       className: "like",
       children: [posts.map(function (item) {
-        return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "f"], {
+        return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
           className: "post",
           onClick: test,
           children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_Components_MyPost__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], {
@@ -78,7 +87,7 @@ var Likepost = function Likepost() {
             content: item.content
           })
         }, item.post_id);
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "f"], {
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_2__[/* View */ "g"], {
         className: "btm",
         children: bottom ? '已经到底啦!' : ''
       })]
