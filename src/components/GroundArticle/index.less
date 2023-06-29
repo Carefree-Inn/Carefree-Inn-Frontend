@@ -99,23 +99,43 @@
     width: auto;
     height: 60px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: space-between;
+
+    .category {
+      width: max-content;
+      padding: 10px;
+      font-size: 20px;
+      color: white;
+      background-color: #E4ACAC;
+      display: flex;
+      border-radius: 10px;
+      border: 0;
+      height: 25px;
+      line-height: 25px;
+    }
 
     .cardLikeBox2 {
+      margin-top: 20px;
       width: 200px;
       display: flex;
       justify-content: space-around;
       align-items: center;
 
-      .cardLikeBox3 {
-        //width: 200px;
-        display: flex;
-        align-items: center;
+      .box3 {
+        width: 50px;
+        height: 80px;
 
         .cardLike {
           width: 50px;
           height: 50px;
+        }
+
+        .num {
+          width: 100%;
+          font-size: 20px;
+          color: gray;
+          text-align: center;
         }
       }
     }

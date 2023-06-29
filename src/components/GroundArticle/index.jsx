@@ -63,7 +63,7 @@ const GroundArticle = (props) => {
 
 //提交反馈举报
   function handleSubmit() {
-    if (feedback == '') {
+    if (feedback === '') {
       Taro.showModal({
         title: '提示',
         content: '请选择举报类型!!',
@@ -77,7 +77,7 @@ const GroundArticle = (props) => {
       })
       return
     }
-    if (reportvalue == '') {
+    if (reportvalue === '') {
       Taro.showModal({
         title: '提示',
         content: '请输入详细举报理由!',
@@ -139,15 +139,15 @@ const GroundArticle = (props) => {
         <View dangerouslySetInnerHTML={{__html: `${props.content}`}}></View>
       </View>
       <View className='cardLikeBox'>
+        <View className='category'>{props.category.title}</View>{/* 分区 */}
         <View className='cardLikeBox2'>
-          {/*<Image className='cardLike' src={heart} />*/}
-          <View className='cardLikeBox3'>
+          <View className='box3'>
             <Image className='cardLike' src={liked ? likefill : like} onClick={liked ? DelLike : Like} />
-            <Text>{likes}</Text>
+            <View className='num'>{likes}</View>
           </View>
-          <View className='cardLikeBox3'>
+          <View className='box3'>
             <Image className='cardLike' src={message} />
-            <Text>{props.comments}</Text>
+            <View className='num'>{props.comments}</View>
           </View>
         </View>
       </View>
@@ -158,19 +158,19 @@ const GroundArticle = (props) => {
           </View>
           <View className='choose'>
             <Radio className='radio' value='言语辱骂' onClick={() => setFeedback('言语辱骂')} color='#E4ACAC'
-              checked={feedback === '言语辱骂' ? true : false}
+              checked={feedback === '言语辱骂'}
             >言语辱骂</Radio>
             <Radio className='radio' value='人身攻击' onClick={() => setFeedback('人身攻击')} color='#E4ACAC'
-              checked={feedback === '人身攻击' ? true : false}
+              checked={feedback === '人身攻击'}
             >人身攻击</Radio>
             <Radio className='radio' value='色情暴力' onClick={() => setFeedback('色情暴力')} color='#E4ACAC'
-              checked={feedback === '色情暴力' ? true : false}
+              checked={feedback === '色情暴力'}
             >色情暴力</Radio>
             <Radio className='radio' value='虚假广告' onClick={() => setFeedback('虚假广告')} color='#E4ACAC'
-              checked={feedback === '虚假广告' ? true : false}
+              checked={feedback === '虚假广告'}
             >虚假广告</Radio>
             <Radio className='radio' value='都不是' onClick={() => setFeedback('都不是')} color='#E4ACAC'
-              checked={feedback === '都不是' ? true : false}
+              checked={feedback === '都不是'}
             >都不是</Radio>
           </View>
           <View className='input'>
