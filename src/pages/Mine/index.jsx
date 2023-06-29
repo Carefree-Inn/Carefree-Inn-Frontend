@@ -25,7 +25,7 @@ const Mine=()=>{
   '"{"post_id":15,"to_user_account":"2021213975","create_time":"2023-06-27 15:05:59","like_type":"make","from_user_account":"2021213975","from_user_avatar":"http://dummyimage.com/100x100","from_user_nickname":"2021213940"}"'
 
   useLayoutEffect(()=>{
-    console.log('231')
+    //console.log('231')
       getWebsocket()
   },[])
 
@@ -35,7 +35,7 @@ const Mine=()=>{
         url: 'ws://139.196.30.123:8080/inn/api/v1/notification',
         header:{
           'content-type': 'application/json',
-          'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBY2NvdW50IjoiMjAyMTIxMzk3NSIsImV4cCI6MTY4ODQzMzMyMiwiaXNzIjoiQ0NOVS1Jbm4ifQ.HauJKVJhCLA0ha_yRvFyRxTSdQxU3QI36ew-ye7eQCA',
+          'Authorization': Taro.getStorageSync('token')/* 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBY2NvdW50IjoiMjAyMTIxMzk3NSIsImV4cCI6MTY4ODQzMzMyMiwiaXNzIjoiQ0NOVS1Jbm4ifQ.HauJKVJhCLA0ha_yRvFyRxTSdQxU3QI36ew-ye7eQCA', */
         },
        // protocols:["protocal1"],
         success: function () {
@@ -52,7 +52,7 @@ const Mine=()=>{
         })
         task.onMessage(function (msg) {
           //接受服务器消息
-          console.log('onMessage: ', msg)
+         // console.log('onMessage: ', msg)
           const data = JSON.parse(msg.data)
           console.log(data)
           setMessage(message.concat(data))
@@ -87,7 +87,7 @@ const Mine=()=>{
       setName(res.data.nickname)
       setAvatar(res.data.avatar)
       setDays(res.data.days)
-      console.log(res)
+     // console.log(res)
   })},[])
 
   usePullDownRefresh(() => {
