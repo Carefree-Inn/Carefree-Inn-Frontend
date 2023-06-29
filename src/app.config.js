@@ -27,7 +27,7 @@ export default ({
       pages: [
         'pages/Article/index',
         'pages/PostArticle/index',
-        'pages/TopicArticle/index',
+        'pages/TopicArticles/index',
         'pages/InitUserInfo/index',
         'pages/TopicSearchResult/index',
         'pages/Article/index',
