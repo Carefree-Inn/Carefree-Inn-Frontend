@@ -41,6 +41,9 @@ export default function InitUserInfo() {
         }).then(
             data => {
                 console.log(data)
+                Taro.switchTab({
+                    url:'/pages/Topic/index'
+                })
             }
         )
     }
