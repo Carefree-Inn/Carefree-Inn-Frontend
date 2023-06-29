@@ -176,7 +176,7 @@ function handleInput(e){
           <View><Text className='cardTime'>{create_time}</Text></View>
         </View>
       </View>
-      <View className='cardContent' id='cardContent'onClick={goArticle}>
+      <View className='card_Content' onClick={goArticle}>
         <View dangerouslySetInnerHTML={{__html: `${content}`}}></View>
       </View>
       <View className='card_bottom'>

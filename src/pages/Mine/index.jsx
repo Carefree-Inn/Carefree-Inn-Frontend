@@ -2,7 +2,6 @@ import Taro,{ usePullDownRefresh } from '@tarojs/taro'
 import { useEffect, useState,useLayoutEffect } from 'react'
 import { View, Text,Image } from '@tarojs/components'
 import { getJson } from '../../Service/fetch'
-import mine from '../../Images/avatar.png'
 import home from '../../Images/home.png'
 import like from '../../Images/like.png'
 import notif from '../../Images/notif.png'
@@ -129,7 +128,7 @@ const Mine=()=>{
           <View className='join_time'>已加入{days}天</View>
         </View>
         <View className='right'>
-          <Image src={mine} ></Image>
+          <Image src={avatar} ></Image>
         </View>
       </View>
       <View className='Mine_box'>
