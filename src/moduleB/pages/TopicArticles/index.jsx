@@ -67,7 +67,7 @@ export default function TopicArticles() {
                 <View className='cards'>
                     {
                         articles.map(article => 
-                            <TopicArticle key={article.create_time} article_info={article} onLikeClick={onLikeClick}  cancelLikeClick={cancelLikeClick}/>
+                            <TopicArticle key={article.create_time} article_info={article} onLikeClick={onLikeClick}  cancelLikeClick={cancelLikeClick} />
                         )
                     }
                 </View>

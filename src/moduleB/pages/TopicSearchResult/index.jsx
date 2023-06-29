@@ -5,7 +5,7 @@ import "./index.less";
 import edit from "../../../Images/edit.svg";
 import search from '../../../Images/search.png';
 import TopicArticle from "../../../components/TopicArticle";
-import { postData } from "../../../Service/fetch";
+import { deleteData, postData } from "../../../Service/fetch";
 
 export default function TopicSearchResult() {
     const [keyword, setKeyword] = useState("");
@@ -40,6 +40,36 @@ export default function TopicSearchResult() {
         });
     }
 
+    const onLikeClick = (query) => {
+        postData('/like',query).then(
+            data => {
+                console.log(data)
+                postData("/post/search", {
+                    data: keyword,
+                    search_type: "all",
+                }).then((r) => {
+                    setArticles(r.data);
+                    console.log(r.data);
+                });
+            }
+        )
+    }
+
+    const cancelLikeClick = (post_id) => {
+        deleteData(`/like?post_id=${post_id}`).then(
+            data => {
+                console.log(data)
+                postData("/post/search", {
+                    data: keyword,
+                    search_type: "all",
+                }).then((r) => {
+                    setArticles(r.data);
+                    console.log(r.data);
+                });
+            }
+        )
+    }
+
     return (
         <View className='topic-search-articles'>
             <View className='topic-articles-box'>
@@ -51,7 +81,7 @@ export default function TopicSearchResult() {
                 </View>
                 <View className='cards'>
                     {articles.map((article) => (
-                        <TopicArticle key={article.create_time} article_info={article} />
+                        <TopicArticle key={article.create_time} article_info={article} onLikeClick={onLikeClick}  cancelLikeClick={cancelLikeClick} />
                     ))}
                 </View>
             </View>

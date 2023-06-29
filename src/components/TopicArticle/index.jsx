@@ -6,7 +6,7 @@ import like from "../../Images/like.svg"
 import liked from "../../Images/like-fill.svg"
 import message from "../../Images/message.svg"
 import "./index.less"
-import { getJson, postData } from "../../Service/fetch";
+import { getJson } from "../../Service/fetch";
 
 
 const TopicArticle = ({article_info, onLikeClick, cancelLikeClick}) => {
@@ -32,35 +32,25 @@ const TopicArticle = ({article_info, onLikeClick, cancelLikeClick}) => {
 
     getJson('/user/profile').then(
       data => {
+        console.log(data.data)
         setSender(data.data)
       }
     )
   },[])
 
-  const onLike = () => {
-
-    const query = {
-      from_user_avatar: sender.avatar,
-      from_user_nickname: user.nickname,
-      post_id: article.post_id,
-      to_user_account: user.account
+  const handleOnClick = () => {
+    if(article_info.liked){
+      cancelLikeClick(article.post_id)
+    } else {
+      const query = {
+        from_user_avatar: sender.avatar,
+        from_user_nickname: sender.nickname,
+        post_id: article.post_id,
+        to_user_account: user.account
+      }
+      console.log(query)
+      onLikeClick(query)
     }
-    console.log(query)
-    // onLikeClick(query)
-    // postData('/like',{
-    //   from_user_avatar: sender.avatar,
-    //   from_user_nickname: user.nickname,
-    //   post_id: article.post_id,
-    //   to_user_account: user.account
-    // }).then(
-    //   data => {
-    //     console.log(data)
-    //   }
-    // )
-  }
-
-  const cancelLike = () => {
-    // cancelLike(article.post_id)
   }
 
   const goArticle = () => {
@@ -107,9 +97,9 @@ const TopicArticle = ({article_info, onLikeClick, cancelLikeClick}) => {
           <View className='box3'>
             <Image className='cardLike' 
               src={article_info.liked?liked:like} 
-              onClick={onLike}
+              onClick={handleOnClick}
             />
-            <View className='num'>{article.likes}</View>
+            <View className='num'>{article_info.likes}</View>
           </View>
           <View className='box3'>
             <Image className='cardLike' src={message} />
