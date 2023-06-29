@@ -1,6 +1,6 @@
 import Taro, {useRouter} from "@tarojs/taro";
 import {useEffect, useState} from "react";
-import {View, Input, Text, Button, Image, Icon, Radio, Textarea} from '@tarojs/components'
+import {View, Input, Text, Button, Image, Radio, Textarea} from '@tarojs/components'
 import './index.less'
 import more from "../../../Images/more.png";
 import like from "../../../Images/like.svg"
@@ -109,9 +109,7 @@ const Article = () => {
         post_id: article.post_id,
         content: comment
       }
-      console.log(comment_info)
     } else {
-      console.log(replyToUser)
       comment_info = {
         is_top: false,
         to_user_account: replyToUser.account,
@@ -121,7 +119,6 @@ const Article = () => {
         post_id: article.post_id,
         content: comment
       }
-      console.log(comment_info)
     }
 
     postData('/comment', comment_info).then(
@@ -134,7 +131,6 @@ const Article = () => {
               icon: 'success',
               duration: 2000
             })
-            console.log(r)
             setComments(r.data)
           }
         )
@@ -167,7 +163,6 @@ const Article = () => {
             data => {
               getJson(`/comment/post?post_id=${article.post_id}&page=${1}&limit=${10}`).then(
                 r => {
-                  console.log(r)
                   setComments(r.data)
                   Taro.showToast({
                     title: data.data,
@@ -243,7 +238,6 @@ const Article = () => {
 
     postData('/user/feedback', data)
       .then(res => {
-        console.log(res)
         Taro.showToast({
           title: '举报成功',
           icon: 'success',

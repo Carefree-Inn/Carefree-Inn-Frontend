@@ -1,5 +1,4 @@
-import Taro from "@tarojs/taro";
-import {Button, Text, Textarea, View} from "@tarojs/components";
+import {Textarea, View} from "@tarojs/components";
 import React from "react";
 import "./index.less"
 
