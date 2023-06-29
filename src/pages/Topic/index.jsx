@@ -10,7 +10,7 @@ import { getJson } from '../../Service/fetch'
 const Topic=()=>{
 
   const [topics,setTopics] = useState([])
-  const [searchContent,setSearchContent] = useState('#') 
+  const [searchContent,setSearchContent] = useState('') 
 
   useEffect(() => {
     getJson('/post/square').then(
@@ -23,21 +23,7 @@ const Topic=()=>{
 
   const toArticles = (topic) => {
     Taro.navigateTo({
-      url: `/moduleB/pages/TopicArticles/index?topic=${topic}`,
-      events: {
-          // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-          acceptDataFromOpenedPage: function (data) {
-              console.log(data)
-          },
-          someEvent: function (data) {
-              console.log(data)
-          }
-      },
-      success: function (res) {
-          // 通过eventChannel向被打开页面传送数据
-          res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
-      }
-  }).then(r => {
+      url: `/moduleB/pages/TopicArticles/index?topic=${topic}`
   })
   }
 
@@ -53,6 +39,7 @@ const Topic=()=>{
 
       <View className='search-box'>
         <Input 
+          placeholder='#'
           className='search-input' 
           type='text' 
           value={searchContent}  
