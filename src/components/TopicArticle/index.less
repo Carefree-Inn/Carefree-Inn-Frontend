@@ -33,10 +33,34 @@
       width: 250px;
       align-items: flex-end;
 
-      .cardMoreInfo {
-        width: 50px;
-        height: 50px;
-        display: flex;
+      .more {
+        position: relative;
+
+        .cardMoreInfo {
+          width: 50px;
+          height: 50px;
+          display: flex;
+        }
+
+        .report {
+          position: absolute;
+          right: 2px;
+          top: 40px;
+          width: 80px;
+          height: 50px;
+          font-size: 25px;
+          line-height: 50px;
+          text-align: center;
+          border-radius: 10px;
+          background-color: #EEDCDC;
+        }
+
+
+        .none {
+          display: none;
+        }
+
+
       }
 
       .cardTime {
@@ -54,6 +78,20 @@
     border-radius: 15px;
     background-color: #fff9f9;
     padding: 20px;
+
+    .c_tags{
+      width: 100%;
+      font-size: 25px;
+      color: rgb(74, 162, 238);
+      display: flex;
+      flex-wrap: wrap;
+     // background-color: red;
+
+      .c_tag{
+        width: max-content;
+        display: flex;
+      } 
+    }
 
     .cardContentText {
       display: block;
@@ -113,6 +151,92 @@
             color: gray;
             text-align: center;
           }
+      }
+    }
+  }
+
+  .m_box {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    // background-color: antiquewhite;
+    .modal {
+      position: absolute;
+      opacity: 1;
+      margin: auto;
+      width: 70%;
+      height: 700px;
+      margin-left: 15%;
+      margin-top: 300px;
+      background-color: #F5E3E3;
+      border-radius: 15px;
+      border: 0;
+      display: flex;
+      flex-direction: column;
+
+      .close {
+        width: 50px;
+        height: 50px;
+        //position: absolute;
+        display: flex;
+        margin-left: 85%;
+        margin-top: 5%;
+
+        Image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .choose {
+        margin-top: 70px;
+        // background-color: aqua;
+        width: 80%;
+        margin: 20px auto;
+        height: 200px;
+        display: grid;
+        grid-template-columns: 160px 160px;
+        gap: 20px;
+
+        .radio {
+          width: 100%;
+          height: 25px;
+          font-size: 25px;
+          margin-right: 40px;
+          // background-color: #c25656;
+        }
+      }
+
+      .input {
+        width: 80%;
+        height: 150px;
+        margin: 20px auto;
+        border-radius: 20px;
+        background-color: white;
+        color: rgb(144, 144, 144);
+        font-size: 25px;
+        border: 0;
+        margin-bottom: 30px;
+        padding: 10px;
+
+        Textarea {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .submit {
+        width: 180px;
+        height: 60px;
+        color: white;
+        line-height: 60px;
+        text-align: center;
+        font-size: 30px;
+        background-color: #E4ACAC;
+        border-radius: 10px;
       }
     }
   }

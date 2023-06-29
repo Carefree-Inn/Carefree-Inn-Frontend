@@ -178,11 +178,11 @@ function handleInput(e){
       </View>
       <View className='card_Content' onClick={goArticle}>
         <View className='c_tags'>
-        {tags.map((item)=>{
-          return(
-             <View className='c_tag'>#{item.title}</View>
-             )
-        })}
+          {tags.map((item)=>{
+            return(
+              <View key={item.tag_id} className='c_tag'>#{item.title}</View>
+              )
+          })}
         </View>
         <View dangerouslySetInnerHTML={{__html: `${content}`}}></View>
       </View>

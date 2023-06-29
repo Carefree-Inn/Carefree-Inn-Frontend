@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text, Input, Image } from '@tarojs/components'
 import loginImg from '../../Images/loginImg.png'
@@ -10,6 +10,14 @@ const Login=()=>{
   const [username,setUsername] = useState('')
   const [password,setPassword] = useState('')
 
+  useEffect(() => {
+    const token = Taro.getStorageSync('token')
+    if(token){
+      Taro.reLaunch({
+        url: '/pages/Topic/index'
+      })
+    }
+  })
 
   async function login(){
 

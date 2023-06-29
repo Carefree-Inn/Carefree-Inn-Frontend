@@ -15,6 +15,9 @@ export default function TopicArticles() {
     useEffect(() => {
         const params = Taro.getCurrentInstance().router.params
         setTopic(params.topic)
+        Taro.setNavigationBarTitle({
+            title: '帖子'
+        })
         getJson(`/post/tag?tag=${params.topic}`).then(
             data => {
                 console.log(data.data)

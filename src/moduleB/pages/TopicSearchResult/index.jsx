@@ -1,27 +1,33 @@
 import Taro from "@tarojs/taro";
 import { useEffect, useState } from "react";
-import { View, Image, Input } from "@tarojs/components";
+import { View, Image, Input, Text } from "@tarojs/components";
 import "./index.less";
 import edit from "../../../Images/edit.svg";
 import search from '../../../Images/search.png';
 import TopicArticle from "../../../components/TopicArticle";
-import { deleteData, postData } from "../../../Service/fetch";
+import { deleteData, postData, getJson } from "../../../Service/fetch";
 
 export default function TopicSearchResult() {
-    const [keyword, setKeyword] = useState("");
+    const [keyword, setKeyword] = useState('');
     const [articles, setArticles] = useState([]);
+    const [none,setNone] = useState(false)
 
     useEffect(() => {
         const params = Taro.getCurrentInstance().router.params;
         console.log(params.keyword);
         setKeyword(params.keyword);
-        postData("/post/search", {
-            data: params.keyword,
-            search_type: "all",
-        }).then((data) => {
-            setArticles(data.data);
-            console.log(data.data);
-        });
+        getJson(`/post/tag?tag=${params.keyword}`).then(
+            data => {
+                if(data.data.length){
+                    setArticles(data.data)
+                    setNone(false)
+                } else {
+                    setArticles([])
+                    setNone(true)
+                }
+
+            }
+        )
     }, []);
 
     const goPostArticle = () => {
@@ -31,26 +37,35 @@ export default function TopicSearchResult() {
     };
 
     const searchArticles = () => {
-        postData("/post/search", {
-            data: keyword,
-            search_type: "all",
-        }).then((data) => {
-            setArticles(data.data);
-            console.log(data.data);
-        });
+        console.log(keyword)
+        getJson(`/post/tag?tag=${keyword}`).then(
+            data => {
+                if(data.data.length){
+                    setArticles(data.data)
+                    setNone(false)
+                } else {
+                    setArticles([])
+                    setNone(true)
+                }
+            }
+        )
     }
 
     const onLikeClick = (query) => {
         postData('/like',query).then(
             data => {
                 console.log(data)
-                postData("/post/search", {
-                    data: keyword,
-                    search_type: "all",
-                }).then((r) => {
-                    setArticles(r.data);
-                    console.log(r.data);
-                });
+                getJson(`/post/tag?tag=${keyword}`).then(
+                    r => {
+                        if(r.data.length){
+                            setArticles(r.data)
+                            setNone(false)
+                        } else {
+                            setArticles([])
+                            setNone(true)
+                        }
+                    }
+                )
             }
         )
     }
@@ -59,13 +74,17 @@ export default function TopicSearchResult() {
         deleteData(`/like?post_id=${post_id}`).then(
             data => {
                 console.log(data)
-                postData("/post/search", {
-                    data: keyword,
-                    search_type: "all",
-                }).then((r) => {
-                    setArticles(r.data);
-                    console.log(r.data);
-                });
+                getJson(`/post/tag?tag=${keyword}`).then(
+                    r => {
+                        if(r.data.length){
+                            setArticles(r.data)
+                            setNone(false)
+                        } else {
+                            setArticles([])
+                            setNone(true)
+                        }
+                    }
+                )
             }
         )
     }
@@ -74,16 +93,18 @@ export default function TopicSearchResult() {
         <View className='topic-search-articles'>
             <View className='topic-articles-box'>
                 <View className='search-box'>
-                <Input className='search-input' type='text' value={keyword}  onInput={(e) => setKeyword(e.detail.value)} />
+                    <Input className='search-input' type='text' value={keyword}  onInput={(e) => setKeyword(e.detail.value)} />
                     <View className='search-icon-box' onClick={searchArticles}>
                         <Image className='search-icon' src={search} />
                     </View>
                 </View>
-                <View className='cards'>
+                {!none?<View className='cards'>
                     {articles.map((article) => (
                         <TopicArticle key={article.create_time} article_info={article} onLikeClick={onLikeClick}  cancelLikeClick={cancelLikeClick} />
                     ))}
-                </View>
+                </View>:
+                <View  className="none" >空空如也~~~</View>
+                }
             </View>
             <View className='post-article' onClick={goPostArticle}>
                 <Image className='post-article-img' src={edit} />
