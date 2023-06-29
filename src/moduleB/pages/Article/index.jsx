@@ -263,7 +263,7 @@ const Article = () => {
         <View className='card'>
           <View className='cardInfo'>
             <View className='cardUser'>
-              <Image className='cardUserImg' src='' />
+              <Image className='cardUserImg' src={article.user_info.avatar} />
               <Text className='cardUserName'>{article.user_info.nickname}</Text>
             </View>
             <View className='cardMore'>
