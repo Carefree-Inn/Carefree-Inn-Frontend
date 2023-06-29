@@ -1,8 +1,9 @@
 export default ({
   pages: [
+    'pages/Mine/index',
     'pages/Login/index',
     'pages/Topic/index',
-    'pages/Mine/index',
+    
     'pages/Ground/index'
   ],
   window: {
@@ -22,18 +23,28 @@ export default ({
       ],
       independent: false
     }, 
+<<<<<<< HEAD
     {
+=======
+    /* {
+>>>>>>> dev_mumu
       root: "moduleB",
       pages: [
         'pages/Article/index',
         'pages/PostArticle/index',
         'pages/TopicArticle/index',
         'pages/InitUserInfo/index',
+<<<<<<< HEAD
         'pages/TopicSearchResult/index',
         'pages/Article/index',
         'pages/PostArticle/index'
       ],
     }
+=======
+        'pages/TopicSearchResult/index'
+      ],
+    } */
+>>>>>>> dev_mumu
   ],
     tabBar: {
       /* tab页面必须放在主包里 */

@@ -5,7 +5,11 @@ const preUrl = 'http://139.196.30.123:8080/inn/api/v1';
 const Fetch = (url, data = {}, method) => {
   const header = {
     'content-type': 'application/json',
+<<<<<<< HEAD
     'Authorization':Taro.getStorageSync('token')
+=======
+    'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBY2NvdW50IjoiMjAyMTIxMzk3NSIsImV4cCI6MTY4ODQ3MDI1MSwiaXNzIjoiQ0NOVS1Jbm4ifQ.JIBYicSLvWFrLKMCdRXoqx4hUvyYbF0YhwpfVxdFG7w'/* Taro.getStorageSync('token') */
+>>>>>>> dev_mumu
   };
 
   return Taro.request({
