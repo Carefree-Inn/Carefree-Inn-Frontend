@@ -17,7 +17,7 @@ const Notification = (props) =>{
     useEffect(()=>{
         if(props.like_type||props.type=='like')//对帖子的点赞
         { 
-            console.log('like')
+           // console.log('like')
             setType(0)
         }
         else{
@@ -33,7 +33,7 @@ const Notification = (props) =>{
             '/post/info?post_id=' + id
             )
         .then(res=>{
-            console.log(res)
+            //console.log(res)
             if(res.status==500)
                 setPost('该帖子已被删除!')
             if(res.status==200)

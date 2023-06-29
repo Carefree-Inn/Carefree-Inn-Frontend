@@ -14,7 +14,8 @@ const Mypost = (props) => {
 
     const [show,setShow] = useState(false)
     const {nickname, avatar, content,liked, create_time, likes, comments, id, category} = props
-    
+    const [likeit, setLikeit] = useState(liked)
+    const [likenum, setLikenum] = useState(likes)
     const [feedback,setFeedback] = useState('')//反馈类型
     const [modal,setModal] = useState(false)
     const [reportvalue,setReportvalue] = useState('')//反馈内容
@@ -25,6 +26,24 @@ const Mypost = (props) => {
         
       })
     }
+
+    const Like = () => {
+      postData('/like', {
+        "post_id": id,
+        "to_user_account": props.account,
+        "from_user_account": props.useraccount
+      }).then(() => {
+        setLikeit(!likeit)
+        setLikenum(likenum + 1)
+      })
+    }
+    const DelLike = () => {
+      deleteData(`/like?post_id=${id}`).then(() => {
+        setLikeit(!likeit)
+        setLikenum(likenum - 1)
+      })
+    }
+  
   /* useEffect(()=>{
     var backendResponse = content
     var cardContentElement = document.getElementById("cardContent");
@@ -158,21 +177,15 @@ function handleInput(e){
         </View>
       </View>
       <View className='cardContent' id='cardContent' >
-        <Text className='cardContentText'>{content}</Text>
-        <Image className='cardContentImage' src='http://qny.yyj-freshman-blog.xyz/FiPlDTEAdr6S-7hukKv84F5H2KnF' />
-        {/* <Text className='cardContentText'>试一试加图片</Text>
-        <Image className='cardContentImage' src='http://qny.yyj-freshman-blog.xyz/FiPlDTEAdr6S-7hukKv84F5H2KnF' />
-        <Image className='cardContentImage' src='' />
-        <Image className='cardContentImage' src='' />
-        <Image className='cardContentImage' src='' /> */}
+        <View dangerouslySetInnerHTML={{__html: `${content}`}}></View>
       </View>
       <View className='card_bottom'>
             <View className='category'>{category}</View>{/* 分区 */}
             <View className='cardLikeBox'>
                 <View className='cardLikeBox2'>
                     <View className='box3'>
-                        <Image className='cardLike' src={liked ? likefill : like} />
-                        <View className='num'>{likes}</View>
+                        <Image className='cardLike' src={likeit ? likefill : like}  onClick={likeit ? DelLike : Like} />
+                        <View className='num'>{likenum}</View>
                     </View>
                     <View className='box3'>
                         <Image className='cardLike' src={message} />

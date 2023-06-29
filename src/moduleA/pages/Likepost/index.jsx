@@ -46,7 +46,7 @@ const Likepost=()=>{
                 {posts.map((item)=>{
                     return(
                         <View className='post'  key={item.post_id}>
-                            <Mypost id={item.post_id} category={item.category.title} comments={item.comments} avatar={item.user_info.avatar} nickname={item.user_info.nickname} create_time={item.create_time}likes={item.likes} liked={item.liked} title={item.title} content={item.content} />
+                            <Mypost id={item.post_id} category={item.category.title} comments={item.comments} avatar={item.user_info.avatar} nickname={item.user_info.nickname} create_time={item.create_time}likes={item.likes} useraccount={item.from_user_account} account={item.to_user_account}  liked={item.liked} title={item.title} content={item.content} />
                         </View>
                     )
                 })}

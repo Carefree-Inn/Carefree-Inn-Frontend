@@ -23,7 +23,7 @@ const MyReply = ()=>{
      const params = getCurrentInstance()
      const param = params.router.params
      const data = JSON.parse(param.message)
-     console.log( JSON.parse(param.message))
+    // console.log( JSON.parse(param.message))
      setMsg(data.data)
      //const data = JSON.parse(param.message)
     // setMsg(data.data)
