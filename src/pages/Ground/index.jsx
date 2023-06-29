@@ -50,7 +50,7 @@ const Ground = () => {
 
   const searchArticles = () => {
     Taro.navigateTo({
-      url: `/moduleB/pages/TopicSearchResult/index?keyword=${searchContent}`
+      url: `/moduleB/pages/GroundSearchResult/index?keyword=${searchContent}`
     })
   }
 

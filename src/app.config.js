@@ -29,7 +29,8 @@ export default ({
         'pages/PostArticle/index',
         'pages/TopicArticles/index',
         'pages/InitUserInfo/index',
-        'pages/TopicSearchResult/index'
+        'pages/TopicSearchResult/index',
+        'pages/GroundSearchResult/index'
       ],
     }
 
