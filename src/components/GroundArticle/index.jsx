@@ -1,6 +1,6 @@
 import Taro from "@tarojs/taro";
 import {Button, Image, Radio, Text, Textarea, View} from "@tarojs/components";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import more from "../../Images/more.svg";
 import like from "../../Images/like.svg"
 import likefill from "../../Images/like-fill.svg"
