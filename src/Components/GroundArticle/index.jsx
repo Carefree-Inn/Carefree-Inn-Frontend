@@ -139,7 +139,7 @@ const GroundArticle = (props) => {
         <View className='c_tags'>
           {props.tags.map((item) => {
             return (
-              <View className='c_tag'>#{item.title}</View>
+              <View key={item.tag_id} className='c_tag'>#{item.title}</View>
             )
           })}
         </View>

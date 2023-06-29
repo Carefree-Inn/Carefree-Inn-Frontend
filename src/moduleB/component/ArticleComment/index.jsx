@@ -11,6 +11,9 @@ const ArticleComment = ({comment_info, onDelete, current_account, author_account
   const [fromUser, setFromUser] = useState({})
 
   useEffect(() => {
+    console.log(current_account,'current')
+    console.log(author_account,'author')
+    console.log(comment_info.from_user_account,'from')
     setComment(comment_info)
     setFromUser(comment_info.from_user_account)
     if (comment_info.to_user_account) {

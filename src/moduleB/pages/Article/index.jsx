@@ -39,13 +39,12 @@ const Article = () => {
   const [comment, setComment] = useState('')
   const [comments, setComments] = useState([])
   const [focus, setFocus] = useState(false)
-  const [replyToComment, setReplyToComment] = useState({})
-  const [replyToUser, setReplyToUser] = useState({})
-  const [sender, setSender] = useState({})
+  const [replyToComment, setReplyToComment] = useState({}) // 要回复的那个帖子
+  const [replyToUser, setReplyToUser] = useState({}) //要回复的那个用户
+  const [sender, setSender] = useState({}) // 正在阅读文章的用户 (应该为current_user 但是懒得改了)
 
   const [liked, setLiked] = useState(article.liked)
   const [likes, setLikes] = useState(article.likes)
-  const [user, setUser] = useState([])
 
   const [feedback, setFeedback] = useState('')//反馈类型
   const [modal, setModal] = useState(false)
@@ -54,6 +53,7 @@ const Article = () => {
 
   useEffect(() => {
     getJson(`/post/info?post_id=${postId}`).then((r) => {
+      console.log(r.data)
       setArticle(r.data)
     })
     getJson(`/post/info?post_id=${postId}`).then((r) => {
@@ -61,11 +61,12 @@ const Article = () => {
       setLiked(r.data.liked)
     })
     getJson(`/comment/post?post_id=${postId}&page=1&limit=100`).then((r) => {
+      console.log(r.data)
       setComments(r.data)
     })
     getJson('/user/profile').then(r => {
-      setUser(r.data)
       setSender(r.data)
+      console.log(r.data)
     })
   }, [])
 
@@ -73,7 +74,7 @@ const Article = () => {
     postData('/like', {
       "post_id": article.post_id,
       "to_user_account": article.user_info.account,
-      "from_user_account": user.account
+      "from_user_account": sender.account
     }).then(() => {
       setLiked(!liked)
       setLikes(likes + 1)
@@ -294,7 +295,7 @@ const Article = () => {
                   comment_info={commentItem}
                   onDelete={onDelete}
                   current_account={sender.account}
-                  author_account={user.account}
+                  author_account={article.user_info.account}
                 />
               </View>
               {
@@ -305,7 +306,7 @@ const Article = () => {
                       comment_info={item}
                       onDelete={onDelete}
                       current_account={sender.account}
-                      author_account={user.account}
+                      author_account={article.user_info.account}
                     />
                   </View>
                 )
