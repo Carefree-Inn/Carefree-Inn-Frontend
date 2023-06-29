@@ -23,7 +23,7 @@ const TopicArticle = ({article_info, onLikeClick, cancelLikeClick}) => {
 
   useEffect(() => {
     // console.log(article_info)
-    // console.log(article_info['user_info'])                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+    // console.log(article_info['user_info'])
     setArticle({
       category: article_info.category,
       content: article_info.content,
@@ -170,10 +170,10 @@ const TopicArticle = ({article_info, onLikeClick, cancelLikeClick}) => {
       </View>
       <View className='cardLikeBox'>
         <View className='category'>{article_info.category.title}</View>{/* 分区 */}
-        <View className='cardLikeBox2'> 
+        <View className='cardLikeBox2'>
           <View className='box3'>
-            <Image className='cardLike' 
-              src={article_info.liked?liked:like} 
+            <Image className='cardLike'
+              src={article_info.liked?liked:like}
               onClick={handleOnClick}
             />
             <View className='num'>{article_info.likes}</View>

@@ -1,6 +1,6 @@
 import Taro from "@tarojs/taro";
 import {Button, Image, Radio, Text, Textarea, View} from "@tarojs/components";
-import {useState} from "react";
+import React, {useState} from "react";
 import more from "../../Images/more.svg";
 import like from "../../Images/like.svg"
 import likefill from "../../Images/like-fill.svg"
@@ -136,6 +136,13 @@ const GroundArticle = (props) => {
         </View>
       </View>
       <View className='cardContent' onClick={goArticle}>
+        <View className='c_tags'>
+          {props.tags.map((item) => {
+            return (
+              <View className='c_tag'>#{item.title}</View>
+            )
+          })}
+        </View>
         <View dangerouslySetInnerHTML={{__html: `${props.content}`}}></View>
       </View>
       <View className='cardLikeBox'>

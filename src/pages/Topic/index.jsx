@@ -1,16 +1,16 @@
 import Taro from '@tarojs/taro'
-import { useState, useEffect } from 'react'
-import { View, Text, Input, Image } from '@tarojs/components'
+import {useState, useEffect} from 'react'
+import {View, Text, Input, Image} from '@tarojs/components'
 import search from '../../Images/search.png'
 import background from '../../Images/flower.jpg'
 import './index.less'
-import { getJson } from '../../Service/fetch'
+import {getJson} from '../../Service/fetch'
 
 
-const Topic=()=>{
+const Topic = () => {
 
-  const [topics,setTopics] = useState([])
-  const [searchContent,setSearchContent] = useState('') 
+  const [topics, setTopics] = useState([])
+  const [searchContent, setSearchContent] = useState('')
 
   useEffect(() => {
     getJson('/post/square').then(
@@ -19,12 +19,12 @@ const Topic=()=>{
         setTopics(data.data)
       }
     )
-  },[])
+  }, [])
 
   const toArticles = (topic) => {
     Taro.navigateTo({
       url: `/moduleB/pages/TopicArticles/index?topic=${topic}`
-  })
+    })
   }
 
   const searchArticles = () => {
@@ -38,28 +38,30 @@ const Topic=()=>{
     <View className='topic-wrapper'>
 
       <View className='search-box'>
-        <Input 
+        <Input
           placeholder='#'
-          className='search-input' 
-          type='text' 
-          value={searchContent}  
+          className='search-input'
+          type='text'
+          confirmType='search'
+          value={searchContent}
           onInput={(e) => setSearchContent(e.detail.value)}
+          onConfirm={searchArticles}
         />
         <View className='search-icon-box' onClick={searchArticles}>
           <Image className='search-icon' src={search} />
         </View>
       </View>
       <View className='topic-title'>
-          <Text>今日话题</Text>
+        <Text>今日话题</Text>
       </View>
       <View className='topic-content-box'>
         <View className='topic-list'>
           {
-            topics.map((topic,index) => {
+            topics.map((topic, index) => {
               return <View key={`${index}`} className='topic-item' onClick={() => toArticles(topic)}>
-                    <View className={`topic-item-order ${index < 3? 'active':''}`}>{index + 1}</View>
-                    <View className='topic-item-content'>{`#${topic}`}</View>
-                  </View>
+                <View className={`topic-item-order ${index < 3 ? 'active' : ''}`}>{index + 1}</View>
+                <View className='topic-item-content'>{`#${topic}`}</View>
+              </View>
             })
           }
           {/* <View className='topic-item'>

@@ -1,5 +1,5 @@
 import Taro, {useRouter} from "@tarojs/taro";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {View, Input, Text, Button, Image, Radio, Textarea} from '@tarojs/components'
 import './index.less'
 import more from "../../../Images/more.png";
@@ -275,6 +275,13 @@ const Article = () => {
             </View>
           </View>
           <View className='cardContent'>
+            <View className='c_tags'>
+              {article.tags.map((item) => {
+                return (
+                  <View className='c_tag'>#{item.title}</View>
+                )
+              })}
+            </View>
             <View dangerouslySetInnerHTML={{__html: `${article.content}`}}></View>
           </View>
         </View>

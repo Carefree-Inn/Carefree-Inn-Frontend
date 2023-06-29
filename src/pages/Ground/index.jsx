@@ -63,6 +63,7 @@ const Ground = () => {
           placeholder='搜索帖子'
           value={searchContent}
           onInput={(e) => setSearchContent(e.detail.value)}
+          onConfirm={searchArticles}
         />
         <View className='search-icon-box' onClick={searchArticles}>
           <Image className='search-icon' src={search} />
@@ -85,7 +86,8 @@ const Ground = () => {
             return (
               <GroundArticle key='create_time' nickname={art.user_info.nickname} avatar={art.user_info.avatar} title={art.title}
                 content={art.content} likes={art.likes} comments={art.comments} account={art.user_info.account}
-                create_time={art.create_time} liked={art.liked} post_id={art.post_id} useraccount={user.account}
+                tags={art.tags} create_time={art.create_time} liked={art.liked} post_id={art.post_id}
+                useraccount={user.account}
                 category={art.category}
               ></GroundArticle>)
           })}

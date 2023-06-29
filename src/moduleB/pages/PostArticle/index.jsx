@@ -141,8 +141,8 @@ const PostArticle = () => {
             setCurrentArea(area[e.detail.value])
           }}
           >
-            <View className='postArticlePicker'>
-              当前分区：{currentArea}
+            <View>
+              当前分区：{currentArea ? currentArea : <Text className='postArticlePickerText'>点击选择</Text>}
             </View>
           </Picker>
         </View>
