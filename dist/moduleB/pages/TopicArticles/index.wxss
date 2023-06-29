@@ -1,0 +1,48 @@
+.topic-articles {
+  background-color: #FFEFEA;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 10rpx;
+}
+.topic-articles .topic-articles-box {
+  width: 90%;
+  margin: auto;
+}
+.topic-articles .topic-articles-box .topic-name {
+  width: auto;
+  height: 40rpx;
+  background: #fff;
+  color: #0C8A76;
+  font-weight: 600;
+  font-size: 30rpx;
+  padding-bottom: 6rpx;
+  border-radius: 15rpx;
+  padding: 15rpx;
+}
+.topic-articles .topic-articles-box .cards {
+  margin-top: 30rpx;
+  width: 100%;
+}
+.topic-articles .post-article {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  background-color: #6b6b6b;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  right: 20rpx;
+  bottom: 75rpx;
+}
+.topic-articles .post-article .post-article-img {
+  width: 60rpx;
+  height: 60rpx;
+}
+

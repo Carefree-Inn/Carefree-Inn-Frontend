@@ -24,8 +24,9 @@ export default ({
         pages: [
           'pages/Article/index',
           'pages/PostArticle/index',
-          'pages/TopicArticle/index',
-          'pages/InitUserInfo/index'
+          'pages/TopicArticles/index',
+          'pages/InitUserInfo/index',
+          'pages/TopicSearchResult/index'
         ],
       }
     ],
@@ -41,15 +42,15 @@ export default ({
         {
           pagePath: 'pages/Ground/index',
           text:'广场',
-          iconPath: '',
-          selectedIconPath: '',
+          iconPath: 'Images/topic.png',
+          selectedIconPath: 'Images/topic-selected.png',
   
         },
         {
           pagePath: 'pages/Mine/index',
           text:'个人',
-          iconPath: '',
-          selectedIconPath: ''
+          iconPath: 'Images/topic.png',
+          selectedIconPath: 'Images/topic-selected.png'
         }],
         color: '#000000',
         backgroundColor: '#F5E3E3',

@@ -6,12 +6,14 @@ import like from "../../Images/like.svg"
 import liked from "../../Images/like-fill.svg"
 import message from "../../Images/message.svg"
 import "./index.less"
+import { getJson, postData } from "../../Service/fetch";
 
 
-const GroundArticle = ({article_info}) => {
+const TopicArticle = ({article_info, onLikeClick, cancelLikeClick}) => {
 
   const [article,setArticle] = useState({})
   const [user,setUser] = useState({})
+  const [sender,setSender] = useState({})
 
   useEffect(() => {
     // console.log(article_info)
@@ -27,7 +29,39 @@ const GroundArticle = ({article_info}) => {
       title: article_info.title
     })
     setUser(article_info['user_info'])
+
+    getJson('/user/profile').then(
+      data => {
+        setSender(data.data)
+      }
+    )
   },[])
+
+  const onLike = () => {
+
+    const query = {
+      from_user_avatar: sender.avatar,
+      from_user_nickname: user.nickname,
+      post_id: article.post_id,
+      to_user_account: user.account
+    }
+    console.log(query)
+    // onLikeClick(query)
+    // postData('/like',{
+    //   from_user_avatar: sender.avatar,
+    //   from_user_nickname: user.nickname,
+    //   post_id: article.post_id,
+    //   to_user_account: user.account
+    // }).then(
+    //   data => {
+    //     console.log(data)
+    //   }
+    // )
+  }
+
+  const cancelLike = () => {
+    // cancelLike(article.post_id)
+  }
 
   const goArticle = () => {
     Taro.navigateTo({
@@ -71,8 +105,11 @@ const GroundArticle = ({article_info}) => {
         <View className='category'>{article_info.category.title}</View>{/* 分区 */}
         <View className='cardLikeBox2'> 
           <View className='box3'>
-            <Image className='cardLike' src={article_info.liked?liked:like} />
-            <View className='num'>{article_info.likes}</View>
+            <Image className='cardLike' 
+              src={article_info.liked?liked:like} 
+              onClick={onLike}
+            />
+            <View className='num'>{article.likes}</View>
           </View>
           <View className='box3'>
             <Image className='cardLike' src={message} />
@@ -84,4 +121,4 @@ const GroundArticle = ({article_info}) => {
   )
 }
 
-export default GroundArticle;
+export default TopicArticle;

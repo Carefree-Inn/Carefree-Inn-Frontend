@@ -1,14 +1,15 @@
-(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["pages/Topic/index"],{
+(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["moduleB/pages/TopicSearchResult/index"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js!./src/pages/Topic/index.jsx":
-/*!*******************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./src/pages/Topic/index.jsx ***!
-  \*******************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js!./src/moduleB/pages/TopicSearchResult/index.jsx":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./src/moduleB/pages/TopicSearchResult/index.jsx ***!
+  \***************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TopicSearchResult; });
 /* harmony import */ var D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
 /* harmony import */ var D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
 /* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");
@@ -16,15 +17,16 @@
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
-/* harmony import */ var _Images_search_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Images/search.png */ "./src/Images/search.png");
-/* harmony import */ var _Images_search_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Images_search_png__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Images_flower_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Images/flower.jpg */ "./src/Images/flower.jpg");
-/* harmony import */ var _Images_flower_jpg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Images_flower_jpg__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./index.less */ "./src/pages/Topic/index.less");
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Service/fetch */ "./src/Service/fetch.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.less */ "./src/moduleB/pages/TopicSearchResult/index.less");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Images_edit_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Images/edit.svg */ "./src/Images/edit.svg");
+/* harmony import */ var _Images_edit_svg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Images_edit_svg__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Images_search_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Images/search.png */ "./src/Images/search.png");
+/* harmony import */ var _Images_search_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_Images_search_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_TopicArticle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../components/TopicArticle */ "./src/components/TopicArticle/index.jsx");
+/* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Service/fetch */ "./src/Service/fetch.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -36,106 +38,87 @@
 
 
 
-var Topic = function Topic() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([]),
+
+function TopicSearchResult() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(""),
     _useState2 = Object(D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_useState, 2),
-    topics = _useState2[0],
-    setTopics = _useState2[1];
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])('#'),
+    keyword = _useState2[0],
+    setKeyword = _useState2[1];
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([]),
     _useState4 = Object(D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_useState3, 2),
-    searchContent = _useState4[0],
-    setSearchContent = _useState4[1];
+    articles = _useState4[0],
+    setArticles = _useState4[1];
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_8__[/* getJson */ "b"])('/post/square').then(function (data) {
-      var _console;
+    var _console;
+    var params = _tarojs_taro__WEBPACK_IMPORTED_MODULE_2___default.a.getCurrentInstance().router.params;
+    /* eslint-disable */
+    (_console = console).log.apply(_console, Object(D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(oo_oo("3a510b64_0", params.keyword)));
+    setKeyword(params.keyword);
+    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_9__[/* postData */ "c"])("/post/search", {
+      data: params.keyword,
+      search_type: "all"
+    }).then(function (data) {
+      var _console2;
+      setArticles(data.data);
       /* eslint-disable */
-      (_console = console).log.apply(_console, Object(D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(oo_oo("30f368d4_0", data)));
-      setTopics(data.data);
+      (_console2 = console).log.apply(_console2, Object(D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(oo_oo("3a510b64_1", data.data)));
     });
   }, []);
-  var toArticles = function toArticles(topic) {
+  var goPostArticle = function goPostArticle() {
     _tarojs_taro__WEBPACK_IMPORTED_MODULE_2___default.a.navigateTo({
-      url: "/moduleB/pages/TopicArticles/index?topic=".concat(topic),
-      events: {
-        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-        acceptDataFromOpenedPage: function acceptDataFromOpenedPage(data) {
-          var _console2;
-          /* eslint-disable */
-          (_console2 = console).log.apply(_console2, Object(D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(oo_oo("30f368d4_1", data)));
-        },
-        someEvent: function someEvent(data) {
-          var _console3;
-          /* eslint-disable */
-          (_console3 = console).log.apply(_console3, Object(D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(oo_oo("30f368d4_2", data)));
-        }
-      },
-      success: function success(res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', {
-          data: 'test'
-        });
-      }
-    }).then(function (r) {});
-  };
-  var searchArticles = function searchArticles() {
-    var _console4;
-    /* eslint-disable */
-    (_console4 = console).log.apply(_console4, Object(D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(oo_oo("30f368d4_3", '22222222222222222')));
-    _tarojs_taro__WEBPACK_IMPORTED_MODULE_2___default.a.navigateTo({
-      url: "/moduleB/pages/TopicSearchResult/index?keyword=".concat(searchContent)
+      url: "/moduleB/pages/PostArticle/index"
     });
   };
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
-    className: "topic-wrapper",
-    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
-      className: "search-box",
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* Input */ "b"], {
-        className: "search-input",
-        type: "text",
-        value: searchContent,
-        onInput: function onInput(e) {
-          return setSearchContent(e.detail.value);
-        }
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
-        className: "search-icon-box",
-        onClick: searchArticles,
-        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* Image */ "a"], {
-          className: "search-icon",
-          src: _Images_search_png__WEBPACK_IMPORTED_MODULE_5___default.a
+  var searchArticles = function searchArticles() {
+    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_9__[/* postData */ "c"])("/post/search", {
+      data: keyword,
+      search_type: "all"
+    }).then(function (data) {
+      var _console3;
+      setArticles(data.data);
+      /* eslint-disable */
+      (_console3 = console).log.apply(_console3, Object(D_web_Project_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(oo_oo("3a510b64_2", data.data)));
+    });
+  };
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
+    className: "topic-search-articles",
+    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
+      className: "topic-articles-box",
+      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
+        className: "search-box",
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* Input */ "b"], {
+          className: "search-input",
+          type: "text",
+          value: keyword,
+          onInput: function onInput(e) {
+            return setKeyword(e.detail.value);
+          }
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
+          className: "search-icon-box",
+          onClick: searchArticles,
+          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* Image */ "a"], {
+            className: "search-icon",
+            src: _Images_search_png__WEBPACK_IMPORTED_MODULE_7___default.a
+          })
+        })]
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
+        className: "cards",
+        children: articles.map(function (article) {
+          return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsx"])(_components_TopicArticle__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"], {
+            article_info: article
+          }, article.create_time);
         })
       })]
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
-      className: "topic-title",
-      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* Text */ "d"], {
-        children: "\u4ECA\u65E5\u8BDD\u9898"
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
+      className: "post-article",
+      onClick: goPostArticle,
+      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* Image */ "a"], {
+        className: "post-article-img",
+        src: _Images_edit_svg__WEBPACK_IMPORTED_MODULE_6___default.a
       })
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
-      className: "topic-content-box",
-      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
-        className: "topic-list",
-        children: topics.map(function (topic, index) {
-          return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
-            className: "topic-item",
-            onClick: function onClick() {
-              return toArticles(topic);
-            },
-            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
-              className: "topic-item-order ".concat(index < 3 ? 'active' : ''),
-              children: index + 1
-            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
-              className: "topic-item-content",
-              children: "#".concat(topic)
-            })]
-          }, "".concat(index));
-        })
-      })
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* Image */ "a"], {
-      className: "topic-background-img",
-      src: _Images_flower_jpg__WEBPACK_IMPORTED_MODULE_6___default.a
     })]
   });
-};
-/* harmony default export */ __webpack_exports__["a"] = (Topic);
+}
 /* eslint-disable */
 ;
 function oo_cm() {
@@ -179,22 +162,10 @@ function oo_te() {
 
 /***/ }),
 
-/***/ "./src/Images/flower.jpg":
-/*!*******************************!*\
-  !*** ./src/Images/flower.jpg ***!
-  \*******************************/
-/*! no static exports found */
-/*! exports used: default */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "Images/flower.jpg";
-
-/***/ }),
-
-/***/ "./src/pages/Topic/index.jsx":
-/*!***********************************!*\
-  !*** ./src/pages/Topic/index.jsx ***!
-  \***********************************/
+/***/ "./src/moduleB/pages/TopicSearchResult/index.jsx":
+/*!*******************************************************!*\
+  !*** ./src/moduleB/pages/TopicSearchResult/index.jsx ***!
+  \*******************************************************/
 /*! no exports provided */
 /*! all exports used */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -202,23 +173,23 @@ module.exports = __webpack_require__.p + "Images/flower.jpg";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/runtime/dist/runtime.esm.js");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/babel-loader/lib!./index.jsx */ "./node_modules/babel-loader/lib/index.js!./src/pages/Topic/index.jsx");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/babel-loader/lib!./index.jsx */ "./node_modules/babel-loader/lib/index.js!./src/moduleB/pages/TopicSearchResult/index.jsx");
 
 
-var config = {"navigationBarTitleText":"话题"};
+var config = {};
 
 
-var inst = Page(Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageConfig"])(_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], 'pages/Topic/index', {root:{cn:[]}}, config || {}))
+var inst = Page(Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageConfig"])(_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], 'moduleB/pages/TopicSearchResult/index', {root:{cn:[]}}, config || {}))
 
 
 
 
 /***/ }),
 
-/***/ "./src/pages/Topic/index.less":
-/*!************************************!*\
-  !*** ./src/pages/Topic/index.less ***!
-  \************************************/
+/***/ "./src/moduleB/pages/TopicSearchResult/index.less":
+/*!********************************************************!*\
+  !*** ./src/moduleB/pages/TopicSearchResult/index.less ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -226,5 +197,5 @@ var inst = Page(Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageC
 
 /***/ })
 
-},[["./src/pages/Topic/index.jsx","runtime","taro","vendors","common"]]]);
+},[["./src/moduleB/pages/TopicSearchResult/index.jsx","runtime","taro","vendors","common"]]]);
 //# sourceMappingURL=index.js.map

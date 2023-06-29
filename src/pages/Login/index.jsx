@@ -9,7 +9,6 @@ const Login=()=>{
 
   const [username,setUsername] = useState('')
   const [password,setPassword] = useState('')
-  const [attention,setAttention] = useState(false)
 
 
   async function login(){
@@ -17,7 +16,11 @@ const Login=()=>{
     console.log(username,password)
 
     if(username === ''|| password === '' || username.length !== 10){
-      setAttention(true)
+      Taro.showToast({
+        title: '账号或密码错误',
+        icon: 'error',
+        duration: 2000
+      })
       return
     }
 
@@ -34,9 +37,16 @@ const Login=()=>{
         'content-type': 'application/json'
       },
       success: function(res) {
+        if(res.status === 200){
+          Taro.showToast({
+            title: '登录成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
         const resData = res.data.data
         // console.log(res)
-        // console.log(resData)
+        console.log(resData)
         Taro.setStorageSync('token',resData.token)
 
         if(resData.is_first){
@@ -64,7 +74,7 @@ const Login=()=>{
           <Text>学号：</Text>
           <Input 
             type='text' 
-            onInput={(e) => {setAttention(false);setUsername(e.detail.value)}}
+            onInput={(e) => {setUsername(e.detail.value)}}
             value={username} 
             placeholder='请输入学号' 
           />
@@ -73,7 +83,7 @@ const Login=()=>{
           <Text>密码：</Text>
           <Input 
             type='password' 
-            onInput={(e) => {setAttention(false);setPassword(e.detail.value)}}
+            onInput={(e) => {setPassword(e.detail.value)}}
             value={password} 
             placeholder='请输入密码' 
           />
@@ -81,9 +91,6 @@ const Login=()=>{
       </View>
       <View className='login-submit' onClick={login}>
         <Image src={loginImg} />
-      </View>
-      <View className={`portal ${attention? 'active':''}`}>
-        <Text>学号或密码错误!</Text>
       </View>
     </View>
   )

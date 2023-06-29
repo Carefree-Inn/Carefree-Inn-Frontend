@@ -1,51 +1,3 @@
-.topic-articles {
-  background-color: #FFEFEA;
-  width: 100vw;
-  min-height: 100vh;
-  padding-top: 10rpx;
-}
-.topic-articles .topic-articles-box {
-  width: 90%;
-  margin: auto;
-}
-.topic-articles .topic-articles-box .topic-name {
-  width: auto;
-  height: 40rpx;
-  background: #fff;
-  color: #0C8A76;
-  font-weight: 600;
-  font-size: 30rpx;
-  padding-bottom: 6rpx;
-  border-radius: 15rpx;
-  padding: 15rpx;
-}
-.topic-articles .topic-articles-box .cards {
-  margin-top: 30rpx;
-  width: 100%;
-}
-.topic-articles .post-article {
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 60rpx;
-  background-color: #6b6b6b;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: fixed;
-  right: 20rpx;
-  bottom: 75rpx;
-}
-.topic-articles .post-article .post-article-img {
-  width: 60rpx;
-  height: 60rpx;
-}
-
 .card {
   min-height: 350rpx;
   background-color: #ffffff;
@@ -130,14 +82,31 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.card .cardLikeBox .category {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10rpx;
+  font-size: 20rpx;
+  color: white;
+  background-color: #E4ACAC;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10rpx;
+  border: 0;
+  height: 25rpx;
+  line-height: 25rpx;
 }
 .card .cardLikeBox .cardLikeBox2 {
+  margin-top: 20rpx;
   width: 200rpx;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -149,8 +118,18 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.card .cardLikeBox .cardLikeBox2 .cardLike {
+.card .cardLikeBox .cardLikeBox2 .box3 {
+  width: 50rpx;
+  height: 80rpx;
+}
+.card .cardLikeBox .cardLikeBox2 .box3 .cardLike {
   width: 50rpx;
   height: 50rpx;
+}
+.card .cardLikeBox .cardLikeBox2 .box3 .num {
+  width: 100%;
+  font-size: 20rpx;
+  color: gray;
+  text-align: center;
 }
 

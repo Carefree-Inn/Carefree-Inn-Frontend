@@ -1,5 +1,5 @@
 .Article {
-  background-color: #101010;
+  background-color: #FFEFEA;
   width: 100vw;
   min-height: 100vh;
   padding-top: 10rpx;
@@ -91,6 +91,7 @@
   background-color: #ffffff;
   border-radius: 15rpx;
   padding: 20rpx 30rpx 20rpx 30rpx;
+  padding-bottom: 120rpx;
 }
 .Article .articlePostComment {
   position: fixed;
@@ -152,20 +153,26 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-left: 2%;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   width: 70%;
 }
 .articleComment .articleCommentContent .articleCommentUserName {
-  color: #babac9;
+  font-weight: bold;
+  font-size: small;
 }
 .articleComment .articleCommentLike {
-  width: 10%;
-  height: 80%;
+  font-size: x-small;
+  color: #808080;
 }
-.articleComment .articleCommentLike .articleCommentLikeImg {
-  width: 50rpx;
-  height: 50rpx;
+.articleComment .articleCommentDelete {
+  width: 60rpx;
+  height: 60rpx;
+}
+.articleComment .articleCommentDelete Image {
+  width: 100%;
+  height: 100%;
 }
 

@@ -4,7 +4,7 @@ import { View, Text, Input, Image } from '@tarojs/components'
 import search from '../../Images/search.png'
 import background from '../../Images/flower.jpg'
 import './index.less'
-import { getJson, postData } from '../../service/fetch'
+import { getJson } from '../../Service/fetch'
 
 
 const Topic=()=>{
@@ -23,7 +23,7 @@ const Topic=()=>{
 
   const toArticles = (topic) => {
     Taro.navigateTo({
-      url: `/moduleB/pages/TopicArticle/index?topic=${topic}`,
+      url: `/moduleB/pages/TopicArticles/index?topic=${topic}`,
       events: {
           // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
           acceptDataFromOpenedPage: function (data) {
@@ -42,14 +42,10 @@ const Topic=()=>{
   }
 
   const searchArticles = () => {
-    postData('/post/search',{
-      data:searchContent.slice(1,),
-      search_type: 'all'
-    }).then(
-      data => {
-        console.log(data)
-      }
-    )
+    console.log('22222222222222222')
+    Taro.navigateTo({
+      url: `/moduleB/pages/TopicSearchResult/index?keyword=${searchContent}`
+    })
   }
 
   return (

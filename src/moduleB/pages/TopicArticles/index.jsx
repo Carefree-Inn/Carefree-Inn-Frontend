@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import {View, Image} from '@tarojs/components'
 import './index.less'
 import edit from '../../../Images/edit.svg'
-import GroundArticle from "../../../components/GroundArticle";
-import { getJson } from '../../../service/fetch';
+import TopicArticle from "../../../components/TopicArticle";
+import { deleteData, getJson, postData } from '../../../Service/fetch';
 
 
-export default function TopicArticle() {
+export default function TopicArticles() {
 
     const [topic,setTopic] = useState('')
     const [articles,setArticles] = useState([])
@@ -30,6 +30,34 @@ export default function TopicArticle() {
         })
     }
 
+    const onLikeClick = (query) => {
+        postData('/like',query).then(
+            data => {
+                console.log(data)
+                getJson(`/post/tag?tag=${topic}`).then(
+                    r => {
+                        console.log(r.data)
+                        setArticles(r.data)
+                    }
+                )
+            }
+        )
+    }
+
+    const cancelLikeClick = (post_id) => {
+        deleteData(`/like?post_id=${post_id}`).then(
+            data => {
+                console.log(data)
+                getJson(`/post/tag?tag=${topic}`).then(
+                    r => {
+                        console.log(r.data)
+                        setArticles(r.data)
+                    }
+                )
+            }
+        )
+    }
+
     return (
         <View className='topic-articles'>
             <View className='topic-articles-box'>
@@ -39,7 +67,7 @@ export default function TopicArticle() {
                 <View className='cards'>
                     {
                         articles.map(article => 
-                            <GroundArticle key={article.create_time} article_info={article} />
+                            <TopicArticle key={article.create_time} article_info={article} onLikeClick={onLikeClick}  cancelLikeClick={cancelLikeClick}/>
                         )
                     }
                 </View>
