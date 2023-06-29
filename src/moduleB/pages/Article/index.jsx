@@ -1,5 +1,5 @@
 import Taro, {useRouter} from "@tarojs/taro";
-import React, {useEffect, useState} from "react";
+import  {useEffect, useState} from "react";
 import {View, Input, Text, Button, Image, Radio, Textarea} from '@tarojs/components'
 import './index.less'
 import more from "../../../Images/more.png";
@@ -74,7 +74,8 @@ const Article = () => {
     postData('/like', {
       "post_id": article.post_id,
       "to_user_account": article.user_info.account,
-      "from_user_account": sender.account
+      "from_user_nickname": sender.nickname,
+      "from_user_avatar":sender.avatar
     }).then(() => {
       setLiked(!liked)
       setLikes(likes + 1)

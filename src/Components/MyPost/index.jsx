@@ -31,7 +31,8 @@ const Mypost = (props) => {
       postData('/like', {
         "post_id": id,
         "to_user_account": props.account,
-        "from_user_account": props.useraccount
+        "from_user_nickname": nickname,
+        "from_user_avatar":avatar
       }).then(() => {
         setLikeit(!likeit)
         setLikenum(likenum + 1)

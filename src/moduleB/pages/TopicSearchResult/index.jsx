@@ -93,7 +93,7 @@ export default function TopicSearchResult() {
         <View className='topic-search-articles'>
             <View className='topic-articles-box'>
                 <View className='search-box'>
-                    <Input className='search-input' type='text' value={keyword}  onInput={(e) => setKeyword(e.detail.value)} />
+                    <Input className='search-input' type='text' value={keyword} onConfirm={searchArticles} onInput={(e) => setKeyword(e.detail.value)} />
                     <View className='search-icon-box' onClick={searchArticles}>
                         <Image className='search-icon' src={search} />
                     </View>
