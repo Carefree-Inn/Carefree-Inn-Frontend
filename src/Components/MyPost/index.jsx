@@ -13,7 +13,7 @@ const Mypost = (props) => {
     /* 我发布的 页面帖子组件 */
 
     const [show,setShow] = useState(false)
-    const {nickname, avatar, content,liked, create_time, likes, comments, id, category} = props
+    const {nickname, avatar, content,liked, create_time, likes, comments, id, category ,tags} = props
     const [likeit, setLikeit] = useState(liked)
     const [likenum, setLikenum] = useState(likes)
     const [feedback,setFeedback] = useState('')//反馈类型
@@ -177,6 +177,13 @@ function handleInput(e){
         </View>
       </View>
       <View className='card_Content' onClick={goArticle}>
+        <View className='c_tags'>
+        {tags.map((item)=>{
+          return(
+             <View className='c_tag'>#{item.title}</View>
+             )
+        })}
+        </View>
         <View dangerouslySetInnerHTML={{__html: `${content}`}}></View>
       </View>
       <View className='card_bottom'>

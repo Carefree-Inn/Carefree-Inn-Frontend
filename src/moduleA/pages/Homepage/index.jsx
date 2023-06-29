@@ -73,7 +73,7 @@ const Homepage=()=>{
         {/* </View> */}
         {posts.map((item)=>{ return(
            <View className='post' key={item.post_id}>
-              <Mypost id={item.post_id} avatar={item.user_info.avatar} useraccount={item.from_user_account} account={item.to_user_account}  category={item.category.title} nickname={item.user_info.nickname} create_time={item.create_time}likes={item.likes} comments={item.comments} liked={item.liked} title={item.title} content={item.content} />
+              <Mypost id={item.post_id} tags={item.tags} avatar={item.user_info.avatar} useraccount={item.from_user_account} account={item.to_user_account}  category={item.category.title} nickname={item.user_info.nickname} create_time={item.create_time}likes={item.likes} comments={item.comments} liked={item.liked} title={item.title} content={item.content} />
           </View>
          )})}
       </View>
