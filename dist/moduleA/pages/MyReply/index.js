@@ -1,25 +1,25 @@
 (wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["moduleA/pages/MyReply/index"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js!./src/moduleA/pages/MyReply/index.jsx":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./src/moduleA/pages/MyReply/index.jsx ***!
-  \*****************************************************************************/
+/***/ "../node_modules/babel-loader/lib/index.js!./src/moduleA/pages/MyReply/index.jsx":
+/*!******************************************************************************!*\
+  !*** ../node_modules/babel-loader/lib!./src/moduleA/pages/MyReply/index.jsx ***!
+  \******************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");
+/* harmony import */ var _Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js */ "../node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tarojs/taro */ "../node_modules/@tarojs/taro/index.js");
 /* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
+/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tarojs/components */ "../node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "../node_modules/react/cjs/react.production.min.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Components_Notification__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Components/Notification */ "./src/Components/Notification/index.jsx");
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.less */ "./src/moduleA/pages/MyReply/index.less");
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Service/fetch */ "./src/Service/fetch.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "../node_modules/react/cjs/react-jsx-runtime.production.min.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
 
 
@@ -34,24 +34,24 @@
 
 var MyReply = function MyReply() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([]),
-    _useState2 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
+    _useState2 = Object(_Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
     msg = _useState2[0],
     setMsg = _useState2[1];
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([]),
-    _useState4 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState3, 2),
+    _useState4 = Object(_Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState3, 2),
     his = _useState4[0],
     setHis = _useState4[1]; //历史通知
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(0),
-    _useState6 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState5, 2),
+    _useState6 = Object(_Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState5, 2),
     page = _useState6[0],
     setPage = _useState6[1];
   var limit = 10;
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
-    _useState8 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState7, 2),
+    _useState8 = Object(_Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState7, 2),
     fresh = _useState8[0],
     setFresh = _useState8[1]; //刷新标识
   var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
-    _useState10 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState9, 2),
+    _useState10 = Object(_Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState9, 2),
     bottom = _useState10[0],
     setBottom = _useState10[1];
   Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__["useReady"])(function () {
@@ -72,11 +72,13 @@ var MyReply = function MyReply() {
   });
 
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_6__[/* getJson */ "b"])('/notification/history?page=' + page + 1 + '&limit=' + limit).then(function (res) {
+    var p = page + 1;
+    Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_6__[/* getJson */ "b"])('/notification/history?page=' + p + '&limit=' + limit).then(function (res) {
       console.log(res);
+      console.log(res.data.length);
       if (res.data.length > 0) {
         setBottom(false);
-        setPage(page + 1);
+        setPage(p);
         setHis(his.concat(res.data));
       } else setBottom(true);
     });
@@ -140,14 +142,14 @@ var MyReply = function MyReply() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
+/* harmony import */ var _Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js */ "../node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tarojs/components */ "../node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "../node_modules/react/cjs/react.production.min.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.less */ "./src/Components/Notification/index.less");
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Service/fetch */ "./src/Service/fetch.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "../node_modules/react/cjs/react-jsx-runtime.production.min.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
 
@@ -168,15 +170,15 @@ var Notification = function Notification(props) {
     content = props.content,
     is_to_post = props.is_to_post;
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
-    _useState2 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
+    _useState2 = Object(_Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
     type = _useState2[0],
     setType = _useState2[1]; //0:点赞 1:评论
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(),
-    _useState4 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState3, 2),
+    _useState4 = Object(_Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState3, 2),
     r_comment = _useState4[0],
     setR_comment = _useState4[1];
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(''),
-    _useState6 = Object(_Users_apple_Desktop_Carefree_Inn_Fronted_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState5, 2),
+    _useState6 = Object(_Users_apple_Desktop_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState5, 2),
     post = _useState6[0],
     setPost = _useState6[1];
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
@@ -188,16 +190,21 @@ var Notification = function Notification(props) {
       } else {
       if (is_to_post == false)
         //回复的是评论
-        setR_comment(true);else
+        {
+          setR_comment(true);
+          setType(1);
+        } else
         //对帖子的评论
         setType(1);
     }
+    console.log(type + 'and' + r_comment);
     Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_4__[/* getJson */ "b"])('/post/info?post_id=' + id).then(function (res) {
       console.log(res);
       if (res.status == 500) setPost('该帖子已被删除!');
       if (res.status == 200) setPost(res.data.content);
     }).catch(function (error) {
       console.log(error);
+      setPost('该帖子已被删除!');
     });
   }, []);
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__["jsx"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__["Fragment"], {
@@ -256,8 +263,8 @@ var Notification = function Notification(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/runtime/dist/runtime.esm.js");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/babel-loader/lib!./index.jsx */ "./node_modules/babel-loader/lib/index.js!./src/moduleA/pages/MyReply/index.jsx");
+/* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tarojs/runtime */ "../node_modules/@tarojs/runtime/dist/runtime.esm.js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/babel-loader/lib!./index.jsx */ "../node_modules/babel-loader/lib/index.js!./src/moduleA/pages/MyReply/index.jsx");
 
 
 var config = {"navigationBarTitleText":"点赞和评论"};

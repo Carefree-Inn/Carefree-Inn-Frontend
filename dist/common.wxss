@@ -141,6 +141,7 @@
   border: 0;
   height: 25rpx;
   line-height: 25rpx;
+  margin-top: 10rpx;
 }
 .card .card_bottom .cardLikeBox {
   width: auto;

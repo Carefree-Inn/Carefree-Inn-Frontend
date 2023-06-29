@@ -22,10 +22,13 @@ const Notification = (props) =>{
         }
         else{
             if(is_to_post==false)//回复的是评论
-                setR_comment(true)
+               { setR_comment(true)
+                 setType(1)
+               }
             else//对帖子的评论
                 setType(1)
         }
+        console.log(type+'and'+r_comment)
         getJson(
             '/post/info?post_id=' + id
             )
@@ -35,7 +38,9 @@ const Notification = (props) =>{
                 setPost('该帖子已被删除!')
             if(res.status==200)
                 setPost(res.data.content)
-        }).catch((error)=>{console.log(error)})
+        }).catch((error)=>{console.log(error)
+            setPost('该帖子已被删除!')
+        })
     },[])
 
     return(

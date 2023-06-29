@@ -22,7 +22,7 @@
   border-radius: 50%;
 }
 .notif .text {
-  width: calc(100vw - 40rpx - 270rpx);
+  width: calc(100vw - 40rpx - 300rpx);
   margin-left: 20rpx;
   height: 100%;
   display: -webkit-flex;
@@ -32,6 +32,7 @@
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: aquamarine;
 }
 .notif .text .name {
   font-weight: 500;
@@ -55,17 +56,16 @@
 .notif .post {
   color: gray;
   width: 160rpx;
-  height: 100%;
-  font-size: 23rpx;
-  line-height: 23rpx;
+  height: 90rpx;
+  font-size: 25rpx;
+  line-height: 30rpx;
+  background-color: aqua;
   overflow: hidden;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
   -webkit-line-clamp: 3;
+  word-break: break-all;
 }
 
 .reply {

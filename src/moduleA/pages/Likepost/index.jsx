@@ -19,16 +19,16 @@ const Likepost=()=>{
     const [bottom,setBottom] = useState(false)
 
     useEffect(()=>{
-
+        const p = page+1
         getJson(
-            '/post/liked?page=' + page+1 + '&limit=' + limit,
+            '/post/liked?page=' + p + '&limit=' + limit,
             {}
         ).then(res=>{
             console.log(res.data)
             if(res.data.length>0)
                { setBottom(false)
                 setPosts(posts.concat(res.data))
-                setPage(page+1)}
+                setPage(p)}
             else
                 setBottom(true)
         })
@@ -46,7 +46,7 @@ const Likepost=()=>{
                 {posts.map((item)=>{
                     return(
                         <View className='post'  key={item.post_id}>
-                            <Mypost id={item.post_id} avatar={item.user_info.avatar} nickname={item.user_info.nickname} create_time={item.create_time}likes={item.likes} liked={item.liked} title={item.title} content={item.content} />
+                            <Mypost id={item.post_id} category={item.category.title} comments={item.comments} avatar={item.user_info.avatar} nickname={item.user_info.nickname} create_time={item.create_time}likes={item.likes} liked={item.liked} title={item.title} content={item.content} />
                         </View>
                     )
                 })}

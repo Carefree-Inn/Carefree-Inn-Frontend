@@ -26,16 +26,16 @@ const Homepage=()=>{
   })
 
   useEffect(()=>{
-
+    const p = page+1
     getJson(
-      '/post/user?page=' + page+1 +'&limit=' + 10
+      '/post/user?page=' + p +'&limit=' + 10
       )
       .then(res=>{
         console.log(res.data)
         if(res.data.length>0)
         {  setBottom(false)
           setPosts(posts.concat(res.data))
-            setPage(page+1)
+            setPage(p)
             } //没有新帖子, 页面回到之前
         else
           setBottom(true) 

@@ -22,13 +22,13 @@
     }
 
     .text{
-        width: calc(100vw - 40px - 270px);
+        width: calc(100vw - 40px - 300px);
         margin-left: 20px;
         height: 100%;
         display: flex;
         font-size: 30px;
         flex-direction: column;
-       // background-color: aquamarine;
+        background-color: aquamarine;
 
         .name{
             font-weight: 500;
@@ -59,15 +59,16 @@
     .post{
         color: gray;
         width: 160px;
-        height: 100%;
-        font-size: 23px;
-        line-height: 23px;
-       // background-color: aqua;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        flex-wrap: wrap;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
+        height: 90px;
+        font-size: 25px;
+        line-height: 30px;
+        background-color: aqua;
+        overflow:hidden; 
+        text-overflow:ellipsis;   
+        display:-webkit-box;  
+        -webkit-box-orient:vertical;  
+        -webkit-line-clamp:3; 
+        word-break: break-all;//英文单词换行
+       // white-space: normal;
     }
 }

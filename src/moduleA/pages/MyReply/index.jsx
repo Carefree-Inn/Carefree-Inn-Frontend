@@ -36,14 +36,16 @@ const MyReply = ()=>{
  })
 
    useEffect(()=>{
+        const p = page+1
         getJson(
-            '/notification/history?page=' + page+1 + '&limit=' + limit
+            '/notification/history?page=' + p + '&limit=' + limit
             )
         .then(res=>{
             console.log(res)
+            console.log(res.data.length)
             if(res.data.length>0)
             {   setBottom(false)
-                setPage(page+1)
+                setPage(p)
                 setHis(his.concat(res.data))
             }
             else

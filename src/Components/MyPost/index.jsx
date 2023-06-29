@@ -18,14 +18,13 @@ const Mypost = (props) => {
     const [feedback,setFeedback] = useState('')//反馈类型
     const [modal,setModal] = useState(false)
     const [reportvalue,setReportvalue] = useState('')//反馈内容
-    
-  const goArticle = () => {
-    Taro.navigateTo({
-      url: `/moduleB/pages/Article/index?post_id=${id}`,
-      
-    })
-  }
 
+    const goArticle = () => {
+      Taro.navigateTo({
+        url: `/moduleB/pages/Article/index?post_id=${id}`,
+        
+      })
+    }
   /* useEffect(()=>{
     var backendResponse = content
     var cardContentElement = document.getElementById("cardContent");
@@ -141,7 +140,6 @@ function handleInput(e){
   }} )
   
   }
-
   return (
 <>
     <View className='card' onClick={goArticle}>
@@ -160,7 +158,7 @@ function handleInput(e){
         </View>
       </View>
       <View className='cardContent' id='cardContent' >
-        <Text className='cardContentText'>试一试加图片</Text>
+        <Text className='cardContentText'>{content}</Text>
         <Image className='cardContentImage' src='http://qny.yyj-freshman-blog.xyz/FiPlDTEAdr6S-7hukKv84F5H2KnF' />
         {/* <Text className='cardContentText'>试一试加图片</Text>
         <Image className='cardContentImage' src='http://qny.yyj-freshman-blog.xyz/FiPlDTEAdr6S-7hukKv84F5H2KnF' />
