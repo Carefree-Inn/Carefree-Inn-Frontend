@@ -1,6 +1,6 @@
 import Taro,{ usePullDownRefresh } from '@tarojs/taro'
 import { useEffect, useState,useLayoutEffect } from 'react'
-import { View, Text,Image } from '@tarojs/components'
+import { View, Text,Image,Button } from '@tarojs/components'
 import { getJson } from '../../Service/fetch'
 import home from '../../Images/home.png'
 import like from '../../Images/like.png'
@@ -118,6 +118,18 @@ const Mine=()=>{
       url:`/moduleA/pages/MyReply/index?message=${JSON.stringify({data:message})}`
     })
   }
+
+  function unLogin(){
+
+    Taro.clearStorageSync()
+    Taro.showToast({
+      icon: 'loading',
+      title: '正在退出登录'
+    });
+    Taro.navigateTo({
+      url: '/pages/Login/index'
+    })
+  }
   return (
 
     <>
@@ -145,6 +157,7 @@ const Mine=()=>{
             {message.length==0 || read ?'':<View className='circle'>{message.length}</View>}
           </View>
       </View>
+        <Button className='unlogin' onClick={unLogin}>退出登录</Button>
     </View>
     </>
   )

@@ -54,7 +54,7 @@ const Notification = (props) =>{
                     <View className='comment'>{content}</View>
                     <Text className='time'>{create_time?create_time:comment_time}</Text>
                 </View>
-                <View className='post'>{post}</View>
+                 <View className='post' dangerouslySetInnerHTML={{__html: `${post}`}}></View>
             </View>
         </>
     )

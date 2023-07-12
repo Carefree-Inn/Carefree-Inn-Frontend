@@ -1,6 +1,6 @@
 import Taro from "@tarojs/taro";
 import {Button, Image, Radio, Text, Textarea, View} from "@tarojs/components";
-import React, {useState} from "react";
+import {useState} from "react";
 import more from "../../Images/more.svg";
 import like from "../../Images/like.svg"
 import likefill from "../../Images/like-fill.svg"
@@ -29,7 +29,8 @@ const GroundArticle = (props) => {
     postData('/like', {
       "post_id": props.post_id,
       "to_user_account": props.account,
-      "from_user_account": props.useraccount
+      "from_user_nickname": props.username,
+      "from_user_avatar":props.useravatar
     }).then(() => {
       setLiked(!liked)
       setLikes(likes + 1)
