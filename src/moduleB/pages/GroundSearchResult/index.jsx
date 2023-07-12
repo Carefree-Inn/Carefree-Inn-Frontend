@@ -1,13 +1,13 @@
-import Taro from "@tarojs/taro";
+import Taro from '@tarojs/taro'
 import { useEffect, useState } from "react";
-import { View, Image, Input, Text } from "@tarojs/components";
+import { View, Image, Input } from "@tarojs/components";
 import "./index.less";
 import edit from "../../../Images/edit.svg";
 import search from '../../../Images/search.png';
 import TopicArticle from "../../../components/TopicArticle";
 import { deleteData, postData, getJson } from "../../../Service/fetch";
 
-export default function TopicSearchResult() {
+export default function GroundSearchResult() {
     const [keyword, setKeyword] = useState('');
     const [articles, setArticles] = useState([]);
     const [none,setNone] = useState(false)
@@ -16,7 +16,7 @@ export default function TopicSearchResult() {
         const params = Taro.getCurrentInstance().router.params;
         console.log(params.keyword);
         setKeyword(params.keyword);
-        getJson('/post/search',{
+        postData('/post/search',{
             'data': params.keyword,
             'search_type': 'all'
         }).then(
@@ -30,6 +30,10 @@ export default function TopicSearchResult() {
                 }
 
             }
+        ).catch(
+            err => {
+                console.log(err)
+            }
         )
     }, []);
 
@@ -41,7 +45,7 @@ export default function TopicSearchResult() {
 
     const searchArticles = () => {
         console.log(keyword)
-        getJson('/post/search',{
+        postData('/post/search',{
             'data': keyword,
             'search_type': 'all'
         }).then(
@@ -54,6 +58,10 @@ export default function TopicSearchResult() {
                     setNone(true)
                 }
 
+            }
+        ).catch(
+            err => {
+                console.log(err)
             }
         )
     }
@@ -72,7 +80,15 @@ export default function TopicSearchResult() {
                             setNone(true)
                         }
                     }
+                ).catch(
+                    err => {
+                        console.log(err)
+                    }
                 )
+            }
+        ).catch(
+            err => {
+                console.log(err)
             }
         )
     }
@@ -91,7 +107,15 @@ export default function TopicSearchResult() {
                             setNone(true)
                         }
                     }
+                ).catch(
+                    err => {
+                        console.log(err)
+                    }
                 )
+            }
+        ).catch(
+            err => {
+                console.log(err)
             }
         )
     }
@@ -110,7 +134,7 @@ export default function TopicSearchResult() {
                         <TopicArticle key={article.create_time} article_info={article} onLikeClick={onLikeClick}  cancelLikeClick={cancelLikeClick} />
                     ))}
                 </View>:
-                <View  className="none" >空空如也~~~</View>
+                <View  className='none' >空空如也~~~</View>
                 }
             </View>
             <View className='post-article' onClick={goPostArticle}>

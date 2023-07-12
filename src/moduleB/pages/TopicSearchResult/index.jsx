@@ -7,7 +7,7 @@ import search from '../../../Images/search.png';
 import TopicArticle from "../../../components/TopicArticle";
 import { deleteData, postData, getJson } from "../../../Service/fetch";
 
-export default function TopicSearchResult() {
+export default function GroundSearchResult() {
     const [keyword, setKeyword] = useState('');
     const [articles, setArticles] = useState([]);
     const [none,setNone] = useState(false)
